@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+    <item>
+        <topicName>Introduction</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion> Practice Question 1</PraacticeQuestion>
+            <PraacticeQuestion> Practice Question 2</PraacticeQuestion>
+            <PraacticeQuestion> Practice Question 3</PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+    <item>
+        <topicName>variables </topicName>
+        <Description>Variablesss</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion> Practice Question 1</PraacticeQuestion>
+            <PraacticeQuestion> Practice Question 2</PraacticeQuestion>
+            <PraacticeQuestion> Practice Question 3</PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+</Items>

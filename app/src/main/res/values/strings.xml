@@ -1,0 +1,58 @@
+<resources>
+
+    <string name="app_name">Tutorials</string>
+    <string name="action_settings">Settings</string>
+
+    <array name="topics">
+        <item>Introduction</item>
+        <item>Operator</item>
+        <item>Introduction</item>
+        <item>Operator</item>
+        <item>Introduction</item>
+        <item>Operator</item>
+    </array>
+
+    <array name="description">
+        <item>Welcome to JAVA Tutorials</item>
+        <item>Arithmetic Operator</item>
+        <item>Welcome to JAVA Tutorials</item>
+        <item>Arithmetic Operator</item>
+        <item>Welcome to JAVA Tutorials</item>
+        <item>Arithmetic Operator</item>
+        <item>Welcome to JAVA Tutorials</item>
+        <item>Arithmetic Operator</item>
+    </array>
+
+    <array name="Examples">
+        <item>Example 1</item>
+        <item>Example 2</item>
+        <item>Example 1</item>
+        <item>Example 2</item>
+        <item>Example 1</item>
+        <item>Example 2</item>
+        <item>Example 1</item>
+        <item>Example 2</item>
+    </array>
+
+    <array name="PracticeQuestion">
+        <item>Practice Question  1</item>
+        <item>Practice Question 2</item>
+        <item>Practice Question  1</item>
+        <item>Practice Question 2</item>
+        <item>Practice Question  1</item>
+        <item>Practice Question 2</item>
+        <item>Practice Question  1</item>
+        <item>Practice Question 2</item>
+
+    </array>
+    <string-array name="menuItems">
+        <item>Programs</item>
+        <item>Important Questions</item>
+        <item>Tutorials</item>
+        <item>Quiz</item>
+        <item>Help</item>
+        <item>Settings</item>
+    </string-array>
+
+
+</resources>

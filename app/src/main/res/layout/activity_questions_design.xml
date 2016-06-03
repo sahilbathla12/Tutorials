@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/activity_backGroundColor"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Prev"
+
+            android:background="@color/btn_backgroundColor"
+            android:textColor="@color/textColor"
+            android:id="@+id/prev"
+
+            />
+
+        <TextView
+            android:id="@+id/timetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textColor="@color/textColor"
+            android:textSize="30dip"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Next"
+            android:id="@+id/next"
+            android:layout_gravity="right"
+            android:background="@color/btn_backgroundColor"
+            android:textColor="@color/textColor"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dip"
+        android:layout_marginBottom="20dip"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dip"
+            android:orientation="vertical">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" android:layout_weight="10"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1)."
+            android:textSize="20dip"
+            android:textColor="@color/textColor"
+            android:layout_weight="9"
+            android:id="@+id/questionNo"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HElo How are You ?"
+                android:layout_weight="1"
+                android:textSize="20dip"
+                android:textColor="@color/textColor"
+                android:id="@+id/question"/>
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroupId">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/optionA"
+                android:textSize="20dip"
+                android:textColor="@color/textColor"
+
+                android:text="A"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/optionB"
+                android:textSize="20dip"
+                android:textColor="@color/textColor"
+
+                android:text="B"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/optionC"
+                android:textSize="20dip"
+                android:textColor="@color/textColor"
+
+                android:text="C"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/optionD"
+                android:textSize="20dip"
+                android:textColor="@color/textColor"
+
+                android:text="D"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/optionE"
+                android:textSize="20dip"
+                android:textColor="@color/textColor"
+                android:text="E"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:id="@+id/checkBoxOptionA"
+                android:textColor="@color/textColor"
+                android:textSize="20dip"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/checkBoxOptionB"
+                android:text="2"
+                android:textColor="@color/textColor"
+                android:textSize="20dip"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Chekbox 1"
+                android:id="@+id/checkBoxOptionC"
+                android:textColor="@color/textColor"
+                android:textSize="20dip"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Chekbox 1"
+                android:id="@+id/checkBoxOptionD"
+                android:textColor="@color/textColor"
+                android:textSize="20dip"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Chekbox 1"
+                android:id="@+id/checkBoxOptionE"
+                android:textColor="@color/textColor"
+                android:textSize="20dip"
+                />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+            <Button
+                android:id="@+id/showAnswerbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:background="@color/btn_backgroundColor"
+                android:text="Show Answer"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnswersAnswersAnswers"
+                android:textSize="40dip"
+                android:visibility="visible"
+                android:layout_marginBottom="40dip"
+                android:textColor="@color/textColor"
+                android:id="@+id/answers"/>
+
+</LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

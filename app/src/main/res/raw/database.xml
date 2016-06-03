@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+    <item>
+        <topicName>Strings</topicName>
+        <Description>Java Tutorial or Core Java Tutorial or Java Programming Tutorial is a widely used robust technology. Let's start learning of java from basic questions like what is java tutorial, core java, where it is used, what type of applications are created in java and why use java.</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[<p>What is the expected output?</br>public static void main(String[] args) {</p><p>boolean stmt1 = "champ" == "champ";</p></br><p>boolean stmt2 = new String("champ") == "champ";</p></br><p>boolean stmt3 = new String("champ") == new String("champ");</p></br><p>System.out.println(stmt1 &amp;&amp; stmt2 || stmt3);</p></br>}]]>
+                   </Question>
+                <options>
+                    <option> true  </option>
+                    <option> FALSE</option>
+                    <option></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[
+                    <p>What is the expected output?</p></br>public static void main(String[] args) {</br>boolean stmt1 = "champ" == "champ";</br> boolean stmt2 = new String("champ").equals(new String("champ"));</br>boolean stmt3 = "champ".toString()=="champ";</br>System.out.println(stmt1 &amp;&amp; stmt2 &amp;&amp; stmt3);</br>}</p>
+                    ]]></Question>
+                <options>
+                    <option> true  </option>
+                    <option> FALSE</option>
+                    <option>  </option>
+                    <option>  </option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question>Select the common methods,which are defined for both type String and type StringBuffer ?</Question>
+                <options>
+                    <option> toString()</option>
+                    <option> length()</option>
+                    <option> append(String)</option>
+                    <option>  trim()</option>
+                    <option> equals(Object)</option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question><![CDATA[<p>public class Tester {</p><p>public static void main(String[] args) {</p><p>StringBuffer sb1 = new StringBuffer("javachamp");</p><p>StringBuffer sb2 = new StringBuffer("javachamp");</p><p>boolean stmt1 =sb1.equals(sb2) ;</p><p>boolean stmt2 = sb1 == sb2;</p>String s1 = new String("javachamp");</p><p> String s2 = new String("javachamp");</p><p>boolean stmt3 = s1.equals(s2);</p><p>boolean stmt4 = s1 == s2;</p><p>}</p><p> }</p> ]]></Question>
+                <options>
+                    <option> stmt 1</option>
+                    <option> stmt 2</option>
+                    <option> stmt 3</option>
+                    <option> stmt 4</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+    <item>
+        <topicName>variables </topicName>
+        <Description>In this page, we will learn about the variable and java data types. Variable is a name of memory location. There are three types of variables: local, instance and static. There are two types of datatypes in java, primitive and non-primitive.</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question>What is Your Name</Question>
+                <options>
+                    <option> A 1  </option>
+                    <option> B  1</option>
+                    <option> C 1 </option>
+                    <option> D 1 </option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question>What is Your AGE</Question>
+                <options>
+                    <option> A  2</option>
+                    <option> B  2</option>
+                    <option> C  2</option>
+                    <option> D  2</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question>What is Your PARTY</Question>
+                <options>
+                    <option> A  3</option>
+                    <option> B  3</option>
+                    <option> C  3</option>
+                    <option> D  3</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question>What is Your HAIR</Question>
+                <options>
+                    <option> A  4</option>
+                    <option> B  4</option>
+                    <option> C  4</option>
+                    <option> D  4</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+        </PracticeQuestions>
+
+
+    </item>
+    <item>
+        <topicName>3rd Topic</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question>What is Your Name</Question>
+                <options>
+                    <option> A 1  </option>
+                    <option> B  1</option>
+                    <option> C 1 </option>
+                    <option> D 1 </option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question>What is Your AGE</Question>
+                <options>
+                    <option> A  2</option>
+                    <option> B  2</option>
+                    <option> C  2</option>
+                    <option> D  2</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question>What is Your PARTY</Question>
+                <options>
+                    <option> A  3</option>
+                    <option> B  3</option>
+                    <option> C  3</option>
+                    <option> D  3</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question>What is Your HAIR</Question>
+                <options>
+                    <option> A  4</option>
+                    <option> B  4</option>
+                    <option> C  4</option>
+                    <option> D  4</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+    <item>
+        <topicName>4th Topic</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question>What is Your Name</Question>
+                <options>
+                    <option> A 1  </option>
+                    <option> B  1</option>
+                    <option> C 1 </option>
+                    <option> D 1 </option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question>What is Your AGE</Question>
+                <options>
+                    <option> A  2</option>
+                    <option> B  2</option>
+                    <option> C  2</option>
+                    <option> D  2</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question>What is Your PARTY</Question>
+                <options>
+                    <option> A  3</option>
+                    <option> B  3</option>
+                    <option> C  3</option>
+                    <option> D  3</option>
+                </options>
+                <TypeofQuestion></TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question>What is Your HAIR</Question>
+                <options>
+                    <option> A  4</option>
+                    <option> B  4</option>
+                    <option> C  4</option>
+                    <option> D  4</option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+</Items>
