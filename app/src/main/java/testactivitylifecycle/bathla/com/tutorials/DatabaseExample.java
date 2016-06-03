@@ -5,6 +5,7 @@ package testactivitylifecycle.bathla.com.tutorials;
  */
 public class DatabaseExample {
 
+    //Database Example
     String example = null;
 
     public String getExample() {
