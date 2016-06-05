@@ -7,8 +7,10 @@ import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -41,16 +43,18 @@ public class QuizActivity extends Activity{
     CheckBox checkBoxButtonC;
     CheckBox checkBoxButtonD;
     CheckBox checkBoxButtonE;
-
+    LinearLayout checkBoxLinearLayout;
 
     TextView questionAnswersTV;
     Button answerBtn;
+    // Acc to list start from 0
     public  int questionNo=0;
     List<DataBaseQuestion> dq;
 
     DatabaseHelper helper;
     String options = "";
     Map<Integer,String> answers=new LinkedHashMap<>();
+
     int correctAnswers=0;
     int IncorrectAnswers=0;
     @Override
@@ -59,7 +63,7 @@ public class QuizActivity extends Activity{
         setContentView(R.layout.activity_questions_design);
 
 
-
+        checkBoxLinearLayout = (LinearLayout) findViewById(R.id.linearLayout_checkBoxes);
         helper = new DatabaseHelper(this);
         prevBtn = (Button) findViewById(R.id.prev);
         nextBtn = (Button) findViewById(R.id.next);
@@ -98,8 +102,8 @@ public class QuizActivity extends Activity{
         //  DatabaseItem db =intent.getParcelableExtra("databaseItem");
         //   dq =intent.getParcelableExtra("databasequestion");
 
-
-        int position =intent.getIntExtra("questionNo",1);
+        //ListView Clicked position
+        final int position =intent.getIntExtra("questionNo",1);
         Log.d("questionSize "," position is :"+position);
 
         //dq=intent.getParcelableArrayListExtra("databasequestion");
@@ -132,6 +136,14 @@ public class QuizActivity extends Activity{
 
 
 
+        checkBoxLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
         prevBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,6 +157,10 @@ public class QuizActivity extends Activity{
             @Override
             public void onClick(View v) {
                 //   prepareQuestions(++questionNo,false);
+
+                options="";
+                Log.d("questionNo","question is : "+questionNo+" question size"+questionSize);
+
                 questionAnswersTV.setVisibility(View.GONE);
                 Log.d("Radio","Test "+options);
 //
@@ -159,25 +175,36 @@ public class QuizActivity extends Activity{
                 if(checkBoxButtonA.isChecked())
                 {
                     checkBoxButtonA.toggle();
+                    options+="A";
                 }
 
                 if(checkBoxButtonB.isChecked())
                 {
                     checkBoxButtonB.toggle();
+                    options+="B";
                 }
                 if(checkBoxButtonC.isChecked())
                 {
                     checkBoxButtonC.toggle();
+                    options+="C";
                 }
                 if(checkBoxButtonD.isChecked())
                 {
                     checkBoxButtonD.toggle();
+                    options+="D";
+                }
+                if(checkBoxButtonE.isChecked())
+                {
+                    checkBoxButtonE.toggle();
+                    options+="E";
                 }
 
 
 
+                    Log.d("options","options is :"+options);
 
                 answers.put(questionNo,options);
+
                 Log.d("Radio",dq.get(questionNo).getAnswer());
 
                 if(dq.get(questionNo).getAnswer().equals(options))
@@ -198,14 +225,17 @@ public class QuizActivity extends Activity{
                     intent.putExtra("result", (Serializable) answers);
                     intent.putExtra("correct_Answers",correctAnswers);
                     intent.putExtra("Incorrect_Answers",IncorrectAnswers);
+                    intent.putExtra("topicId",position);
                     //   intent.putStringArrayListExtra("result",result);
                     Log.d("Radio","Correct Answers : "+correctAnswers);
                     Log.d("Radio","InCorrect Answers : "+IncorrectAnswers);
                     startActivity(intent);
+
                     finish();
 
                 }else
                 {
+
                     prepareQuestions(++questionNo,false);
                 }
 
@@ -228,6 +258,7 @@ public class QuizActivity extends Activity{
         questionRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+
                 switch(checkedId){
                     case R.id.optionA:
                         // do operations specific to this selection
@@ -257,6 +288,7 @@ public class QuizActivity extends Activity{
                         Log.d("Radio","Option E clicked ");
                         options="E";
                         break;
+
                 }
 
 
@@ -266,33 +298,43 @@ public class QuizActivity extends Activity{
         });
 
 
+
+
     }
+
 
 
 
     public void prepareQuestions(int id,boolean nextquestionAvailable)
     {
 
-        Log.d("question","id : "+id);
-        if(questionNo==0)
+        Log.d("QuesionNo","Question no : "+id);
+
+      //  Log.d("question No is ","id : "+id);
+
+        if(id==0)
         {
             prevBtn.setVisibility(View.GONE);
         }
-        else if(questionNo>= questionSize-1)
+        else if(id==questionSize-1)
         {
             nextBtn.setText("Submit");
             //nextBtn.setVisibility(View.GONE);
-
+            prevBtn.setVisibility(View.VISIBLE);
         }
         else
         {
             prevBtn.setVisibility(View.VISIBLE);
         }
 
+
         Log.d("Questions",dq.toString());
-        questionNoTV.setText(""+id+").");
+        questionNoTV.setText(""+(id+1)+").");
+
         questionTV.setText(Html.fromHtml(dq.get(id).getQuestion()));
+
         Log.d("question",dq.get(id).getOptions().toString()+"");
+
         Log.d("question",dq.get(id).getOptions().get(0).toString()+"");
 
         Log.d("question",dq.get(id).getOptions().get(1).toString()+"");
@@ -301,9 +343,12 @@ public class QuizActivity extends Activity{
 
         Log.d("question",dq.get(id).getOptions().get(3).toString()+"");
 
+        Log.d("question",dq.get(questionNo).getOptions().get(4).toString()+"");
 
 
-        if(dq.get(questionNo).getTypeOfQuestion().equals("Single"))
+
+
+        if(dq.get(id).getTypeOfQuestion().equals("Single"))
         {
 
 
@@ -341,8 +386,15 @@ public class QuizActivity extends Activity{
 
                 questionbtnD.setText(dq.get(id).getOptions().get(3).toString());
             }
+            if(!(dq.get(questionNo).getOptions().get(4).toString().trim().equals("")) )
+            {
+                Log.d("VISIBLE","questionbtnE is Visible");
+                questionbtnE.setVisibility(View.VISIBLE);
 
-            questionbtnE.setVisibility(View.GONE);
+                questionbtnE.setText(dq.get(id).getOptions().get(4).toString());
+            }
+
+           // questionbtnE.setVisibility(View.GONE);
             checkBoxButtonA.setVisibility(View.GONE);
             checkBoxButtonB.setVisibility(View.GONE);
             checkBoxButtonC.setVisibility(View.GONE);
@@ -351,7 +403,7 @@ public class QuizActivity extends Activity{
         }
         else
         {
-            checkBoxButtonA.setVisibility(View.VISIBLE);
+          //  checkBoxButtonA.setVisibility(View.VISIBLE);
             if(!(dq.get(id).getOptions().get(0).toString().trim().equals("")))
             {
                 checkBoxButtonA.setVisibility(View.VISIBLE);
@@ -373,14 +425,19 @@ public class QuizActivity extends Activity{
                 checkBoxButtonC.setText(dq.get(id).getOptions().get(2).toString());
             }
 
-            if(!(dq.get(id).getOptions().get(3).toString().trim().equals("")))
+            if(!(dq.get(questionNo).getOptions().get(3).toString().trim().equals("")))
             {
                 checkBoxButtonD.setVisibility(View.VISIBLE);
 
                 checkBoxButtonD.setText(dq.get(id).getOptions().get(3).toString());
             }
+            if(!(dq.get(id).getOptions().get(4).toString().trim().equals("")))
+            {
+                checkBoxButtonE.setVisibility(View.VISIBLE);
 
-            checkBoxButtonE.setVisibility(View.GONE);
+                checkBoxButtonE.setText(dq.get(id).getOptions().get(4).toString());
+            }
+           // checkBoxButtonE.setVisibility(View.GONE);
             questionbtnA.setVisibility(View.GONE);
             questionbtnB.setVisibility(View.GONE);
             questionbtnC.setVisibility(View.GONE);
@@ -397,5 +454,44 @@ public class QuizActivity extends Activity{
 */
 
     }
+
+    /*public void checkBoxClicked(View view)
+    {
+        boolean checked = ((CheckBox) view).isChecked();
+
+        switch (view.getId())
+        {
+            case R.id.checkBoxOptionA:
+                // do operations specific to this selection
+                Log.d("Checked","Option A clicked ");
+                options+="A";
+                break;
+
+            case R.id.checkBoxOptionB:
+                // do operations specific to this selection
+                Log.d("Checked","Option B clicked ");
+                options+="B";
+                break;
+
+            case R.id.checkBoxOptionC:
+                // do operations specific to this selection
+                Log.d("Checked","Option C clicked ");
+                options+="C";
+                break;
+            case R.id.checkBoxOptionD:
+                // do operations specific to this selection
+                Log.d("Checked","Option D clicked ");
+                options+="D";
+                break;
+
+            case R.id.checkBoxOptionE:
+                // do operations specific to this selection
+                Log.d("Checked","Option E clicked ");
+                options+="E";
+                break;
+        }
+        Log.d("Options","options : "+options);
+
+    }*/
 }
 

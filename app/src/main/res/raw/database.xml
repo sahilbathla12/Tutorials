@@ -11,16 +11,17 @@
         <PracticeQuestions name ="Practice">
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
-                <Question><![CDATA[<p>What is the expected output?</br>public static void main(String[] args) {</p><p>boolean stmt1 = "champ" == "champ";</p></br><p>boolean stmt2 = new String("champ") == "champ";</p></br><p>boolean stmt3 = new String("champ") == new String("champ");</p></br><p>System.out.println(stmt1 &amp;&amp; stmt2 || stmt3);</p></br>}]]>
+                <Question><![CDATA[<p>What is the expected output?</br>public static void main(String[] args) {</p></br><p>boolean stmt1 = "champ" == "champ";</p></br><p>boolean stmt2 = new String("champ") == "champ";</p></br><p>boolean stmt3 = new String("champ") == new String("champ");</p></br><p>System.out.println(stmt1 &amp;&amp; stmt2 || stmt3);</p></br>}]]>
                    </Question>
                 <options>
                     <option> true  </option>
                     <option> FALSE</option>
                     <option></option>
                     <option></option>
+                    <option></option>
                 </options>
                 <TypeofQuestion>Multiple</TypeofQuestion>
-                <Answer>A</Answer>
+                <Answer>AB</Answer>
                 <Explanation>SAHIL</Explanation>
             </PraacticeQuestion>
             <PraacticeQuestion>
@@ -31,6 +32,7 @@
                 <options>
                     <option> true  </option>
                     <option> FALSE</option>
+                    <option>  </option>
                     <option>  </option>
                     <option>  </option>
                 </options>
@@ -62,6 +64,7 @@
                     <option> stmt 2</option>
                     <option> stmt 3</option>
                     <option> stmt 4</option>
+                    <option> </option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -89,6 +92,7 @@
                     <option> B  1</option>
                     <option> C 1 </option>
                     <option> D 1 </option>
+                    <option> D 1 </option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -101,6 +105,7 @@
                     <option> A  2</option>
                     <option> B  2</option>
                     <option> C  2</option>
+                    <option> D  2</option>
                     <option> D  2</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
@@ -116,6 +121,7 @@
                     <option> B  3</option>
                     <option> C  3</option>
                     <option> D  3</option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -130,6 +136,7 @@
                     <option> B  4</option>
                     <option> C  4</option>
                     <option> D  4</option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -158,6 +165,7 @@
                     <option> B  1</option>
                     <option> C 1 </option>
                     <option> D 1 </option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -171,6 +179,7 @@
                     <option> B  2</option>
                     <option> C  2</option>
                     <option> D  2</option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -185,6 +194,7 @@
                     <option> B  3</option>
                     <option> C  3</option>
                     <option> D  3</option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -199,6 +209,7 @@
                     <option> B  4</option>
                     <option> C  4</option>
                     <option> D  4</option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -225,6 +236,7 @@
                     <option> B  1</option>
                     <option> C 1 </option>
                     <option> D 1 </option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -238,6 +250,7 @@
                     <option> B  2</option>
                     <option> C  2</option>
                     <option> D  2</option>
+                    <option> A  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
@@ -250,6 +263,7 @@
                 <options>
                     <option> A  3</option>
                     <option> B  3</option>
+                    <option> C  3</option>
                     <option> C  3</option>
                     <option> D  3</option>
                 </options>
@@ -265,6 +279,7 @@
                     <option> B  4</option>
                     <option> C  4</option>
                     <option> D  4</option>
+                    <option> C  3</option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>

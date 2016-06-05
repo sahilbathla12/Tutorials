@@ -17,6 +17,7 @@ public class ResultActivity extends Activity{
 
     TextView ResulttextView = null;
     TextView CommenttextView = null;
+    DatabaseHelper helper =null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class ResultActivity extends Activity{
         setContentView(R.layout.activity_result);
         ResulttextView = (TextView) findViewById(R.id.result);
         CommenttextView= (TextView) findViewById(R.id.resultcomment);
-
+        helper = new DatabaseHelper(this);
 
         Intent intent = getIntent();
 
@@ -33,8 +34,43 @@ public class ResultActivity extends Activity{
         Log.d("Radio" ,result.toString());
        int correctAnswers =  intent.getIntExtra("correct_Answers",0);
         int IncorrectAnswers =  intent.getIntExtra("Incorrect_Answers",0);
+        int topicId = intent.getIntExtra("topicId",0);
+        Map<Integer,String> answersHashMap = (Map<Integer, String>) intent.getSerializableExtra("result");
+
+
         Log.d("Radio","Result Correct Answers : "+correctAnswers);
         Log.d("Radio","Result InCorrect Answers : "+IncorrectAnswers);
+        Log.d("Radio","Answers : "+answersHashMap.toString());
+        Log.d("Radio","Topic Id : "+topicId);
+
+        Map<Integer,String> resultanswersHashMap =  helper.getAnswers(topicId+1);
+        correctAnswers =0;
+        IncorrectAnswers =0;
+        for (Map.Entry entry : answersHashMap.entrySet())
+        {
+                Log.d("key", ""+entry.getKey());
+            //Log.d("result map ", ""+resultanswersHashMap.get(entry.getKey()));
+           // Log.d("answer map ", ""+entry.getValue());
+            String resultStr=(String) resultanswersHashMap.get(entry.getKey());
+            String answer=(String) answersHashMap.get(entry.getKey());
+            Log.d("result map STR", ""+resultStr);
+            Log.d("answer map STR", ""+answer);
+
+            Log.d("match STR", ""+(resultStr==(answer)));
+
+
+                if(resultStr.equals(answer))
+                {
+                    Log.d("correct answer map STR", ""+correctAnswers);
+                    ++correctAnswers;
+                }
+                else
+                {
+
+                    IncorrectAnswers++;
+                }
+                Log.d("Value", ""+entry.getValue());
+        }
 
         ResulttextView.setText("Correct Answers Are :"+correctAnswers+"/"+(correctAnswers+IncorrectAnswers));
         if(correctAnswers>IncorrectAnswers)

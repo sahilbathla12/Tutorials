@@ -162,6 +162,7 @@ public class SpashScreen extends Activity {
                             dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(1).toString()+
                             dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(2).toString()+
                             dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(3).toString()+
+                            dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(4).toString()+
                             (i+1));
                     helper.insertQuestions((i+1),dataBaseItems.get(i).getPracticeQuestionList().get(j).getQuestion(),
                             dataBaseItems.get(i).getPracticeQuestionList().get(j).getAnswer(),
@@ -171,6 +172,7 @@ public class SpashScreen extends Activity {
                             dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(1).toString(),
                             dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(2).toString(),
                             dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(3).toString(),
+                            dataBaseItems.get(i).getPracticeQuestionList().get(j).getOptions().get(4).toString(),
                             (i+1)
                     );
                 }

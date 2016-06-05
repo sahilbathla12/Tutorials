@@ -46,6 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     private static final String KEY_QUESTIONS_OPTION_B= "optionb";
     private static final String KEY_QUESTIONS_OPTION_C= "optionc";
     private static final String KEY_QUESTIONS_OPTION_D= "optiond";
+    private static final String KEY_QUESTIONS_OPTION_E= "optione";
     private static final String KEY_QUESTIONS_ANSWER= "answer";
     private static final String KEY_QUESTIONS_TOPIC_ID= "topicid";
     private static final String KEY_QUESTIONS_TYPE= "type";
@@ -77,6 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             + " TEXT,"  + KEY_QUESTIONS_OPTION_B
             + " TEXT,"  + KEY_QUESTIONS_OPTION_C
             + " TEXT,"  + KEY_QUESTIONS_OPTION_D
+            + " TEXT,"  + KEY_QUESTIONS_OPTION_E
             + " TEXT," + KEY_QUESTIONS_TOPIC_ID
             + " INTEGER"  +")";
 
@@ -167,7 +169,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     static int test=0;
 
     public void insertQuestions(int question_id, String question, String answer,String explanation, String question_type,
-                                String optionA, String optionB, String optionC, String optionD, int topic_id ) {
+                                String optionA, String optionB, String optionC, String optionD, String optionE, int topic_id ) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -181,6 +183,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         values.put(KEY_QUESTIONS_OPTION_B, optionB);
         values.put(KEY_QUESTIONS_OPTION_C, optionC);
         values.put(KEY_QUESTIONS_OPTION_D, optionD);
+        values.put(KEY_QUESTIONS_OPTION_E, optionE);
         values.put(KEY_QUESTIONS_TOPIC_ID, topic_id);
 
         // insert row
@@ -349,6 +352,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 optionList.add(c.getString(c.getColumnIndex(KEY_QUESTIONS_OPTION_B)));
                 optionList.add(c.getString(c.getColumnIndex(KEY_QUESTIONS_OPTION_C)));
                 optionList.add(c.getString(c.getColumnIndex(KEY_QUESTIONS_OPTION_D)));
+                optionList.add(c.getString(c.getColumnIndex(KEY_QUESTIONS_OPTION_E)));
                 question.setOptions(optionList);
 
                 dq.add(question);
@@ -386,5 +390,34 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         }
         Log.d("questionSize "," count  is :"+c.getCount());
         return c.getCount();
+    }
+    public Map<Integer,String> getAnswers(int id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // List<DataBaseQuestion> dq = new ArrayList<>();
+        String selectQuery = "SELECT "+KEY_QUESTIONS_ID+","+KEY_QUESTIONS_ANSWER +"   FROM " + TABLE_QUESTIONS +" where "+KEY_QUESTIONS_TOPIC_ID+" = "+id;
+
+        Log.e(LOG, selectQuery);
+
+        Cursor c = db.rawQuery(selectQuery, null);
+        Map<Integer,String> answersMap = new LinkedHashMap<>();
+        int questionCount=0;
+        String description="";
+        // Map<Integer,String> descriptionMap = new LinkedHashMap<>();
+        if (c.moveToFirst()) {
+            do {
+
+                Log.d("Answers From DataBAse", "Question Id : "+c.getInt(c.getColumnIndex(KEY_QUESTIONS_ID))+"Answers : "+c.getString(c.getColumnIndex(KEY_QUESTIONS_ANSWER)));
+                answersMap.put(questionCount++,c.getString(c.getColumnIndex(KEY_QUESTIONS_ANSWER)));
+                //  questionCount
+                //   descriptionMap.put(c.getInt((c.getColumnIndex(KEY_DESCRIPTION_TOPIC_ID))),c.getString((c.getColumnIndex(KEY_DESCRIPTION_DESCRIPTION))));
+
+                // description=c.getString((c.getColumnIndex(KEY_DESCRIPTION_DESCRIPTION)));
+
+            } while (c.moveToNext());
+        }
+        Log.d("questionSize "," count  is :"+c.getCount());
+        return answersMap;
     }
 }
