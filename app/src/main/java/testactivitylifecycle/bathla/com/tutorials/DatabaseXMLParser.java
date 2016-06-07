@@ -190,6 +190,10 @@ public class DatabaseXMLParser {
                             //              Log.d(myTag,"KEY_OPTION : "+curText);
                             currDataBaseQuestion.setTypeOfQuestion(curText);
                         }
+                        else if (tagname.equalsIgnoreCase(KEY_EXPLANATION)) {
+                            //              Log.d(myTag,"KEY_OPTION : "+curText);
+                            currDataBaseQuestion.setExplanation(curText);
+                        }
 
                         break;
 

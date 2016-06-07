@@ -354,6 +354,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 optionList.add(c.getString(c.getColumnIndex(KEY_QUESTIONS_OPTION_D)));
                 optionList.add(c.getString(c.getColumnIndex(KEY_QUESTIONS_OPTION_E)));
                 question.setOptions(optionList);
+                question.setExplanation(c.getString(c.getColumnIndex(KEY_QUESTIONS_EXPLANATION)));
 
                 dq.add(question);
              //   descriptionMap.put(c.getInt((c.getColumnIndex(KEY_DESCRIPTION_TOPIC_ID))),c.getString((c.getColumnIndex(KEY_DESCRIPTION_DESCRIPTION))));

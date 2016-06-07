@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.LinkedHashMap;
@@ -18,23 +20,25 @@ public class ResultActivity extends Activity{
     TextView ResulttextView = null;
     TextView CommenttextView = null;
     DatabaseHelper helper =null;
-
+    Button resultButton = null;
+    int topicId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         ResulttextView = (TextView) findViewById(R.id.result);
         CommenttextView= (TextView) findViewById(R.id.resultcomment);
+        resultButton = (Button) findViewById(R.id.showExplanation);
         helper = new DatabaseHelper(this);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
         Map<Integer,String> result = (Map<Integer, String>) intent.getSerializableExtra("result");
 
         Log.d("Radio" ,result.toString());
        int correctAnswers =  intent.getIntExtra("correct_Answers",0);
         int IncorrectAnswers =  intent.getIntExtra("Incorrect_Answers",0);
-        int topicId = intent.getIntExtra("topicId",0);
+        topicId = intent.getIntExtra("topicId",0);
         Map<Integer,String> answersHashMap = (Map<Integer, String>) intent.getSerializableExtra("result");
 
 
@@ -43,7 +47,7 @@ public class ResultActivity extends Activity{
         Log.d("Radio","Answers : "+answersHashMap.toString());
         Log.d("Radio","Topic Id : "+topicId);
 
-        Map<Integer,String> resultanswersHashMap =  helper.getAnswers(topicId+1);
+        Map<Integer,String> resultanswersHashMap =  helper.getAnswers((topicId+1));
         correctAnswers =0;
         IncorrectAnswers =0;
         for (Map.Entry entry : answersHashMap.entrySet())
@@ -82,5 +86,15 @@ public class ResultActivity extends Activity{
         {
             CommenttextView.setText("Try Again");
         }
+
+        resultButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent1 = new Intent(getApplicationContext(), ResultAnswer.class);
+                intent1.putExtra("topicId",topicId);
+                startActivity(intent1);
+            }
+        });
     }
 }

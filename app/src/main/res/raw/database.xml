@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
     <item>
+
         <topicName>Strings</topicName>
         <Description>Java Tutorial or Core Java Tutorial or Java Programming Tutorial is a widely used robust technology. Let's start learning of java from basic questions like what is java tutorial, core java, where it is used, what type of applications are created in java and why use java.</Description>
         <Examples name="Examples">
@@ -12,10 +13,10 @@
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
                 <Question><![CDATA[<p>What is the expected output?</br>public static void main(String[] args) {</p></br><p>boolean stmt1 = "champ" == "champ";</p></br><p>boolean stmt2 = new String("champ") == "champ";</p></br><p>boolean stmt3 = new String("champ") == new String("champ");</p></br><p>System.out.println(stmt1 &amp;&amp; stmt2 || stmt3);</p></br>}]]>
-                   </Question>
+                </Question>
                 <options>
-                    <option> true  </option>
-                    <option> FALSE</option>
+                    <option>true</option>
+                    <option>False</option>
                     <option></option>
                     <option></option>
                     <option></option>
@@ -24,10 +25,11 @@
                 <Answer>AB</Answer>
                 <Explanation>SAHIL</Explanation>
             </PraacticeQuestion>
+
             <PraacticeQuestion>
                 <QuestionNo>2</QuestionNo>
                 <Question><![CDATA[
-                    <p>What is the expected output?</p></br>public static void main(String[] args) {</br>boolean stmt1 = "champ" == "champ";</br> boolean stmt2 = new String("champ").equals(new String("champ"));</br>boolean stmt3 = "champ".toString()=="champ";</br>System.out.println(stmt1 &amp;&amp; stmt2 &amp;&amp; stmt3);</br>}</p>
+                    <p>What is the expected output?</br>public static void main(String[] args) {</br>boolean stmt1 = "champ" == "champ";</br> boolean stmt2 = new String("champ").equals(new String("champ"));</br>boolean stmt3 = "champ".toString()=="champ";</br>System.out.println(stmt1 &amp;&amp; stmt2 &amp;&amp; stmt3);</br>}</p>
                     ]]></Question>
                 <options>
                     <option> true  </option>
@@ -39,11 +41,15 @@
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
-
             </PraacticeQuestion>
+
             <PraacticeQuestion>
                 <QuestionNo>3</QuestionNo>
-                <Question>Select the common methods,which are defined for both type String and type StringBuffer ?</Question>
+                <Question><![CDATA[
+                <p> Select the common methods, </br> </p>
+                    <p>which are defined for both type String and type StringBuffer ? </br>
+                    </p>
+                ]]></Question>
                 <options>
                     <option> toString()</option>
                     <option> length()</option>
@@ -56,6 +62,7 @@
                 <Explanation>SAHIL</Explanation>
 
             </PraacticeQuestion>
+
             <PraacticeQuestion>
                 <QuestionNo>4</QuestionNo>
                 <Question><![CDATA[<p>public class Tester {</p><p>public static void main(String[] args) {</p><p>StringBuffer sb1 = new StringBuffer("javachamp");</p><p>StringBuffer sb2 = new StringBuffer("javachamp");</p><p>boolean stmt1 =sb1.equals(sb2) ;</p><p>boolean stmt2 = sb1 == sb2;</p>String s1 = new String("javachamp");</p><p> String s2 = new String("javachamp");</p><p>boolean stmt3 = s1.equals(s2);</p><p>boolean stmt4 = s1 == s2;</p><p>}</p><p> }</p> ]]></Question>
@@ -71,11 +78,173 @@
                 <Explanation>SAHIL</Explanation>
 
             </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[
+                <p>What is the expected output? </br></p>
+               <p>public static void main(String args []) {</p>
+               <p>  String stmt = null;</br> </p>
+               <p>  System.out.print(null+stmt);</br> </p>
+               <p>  System.out.print(stmt+null);</br> </p>
+               <p>  }</p>
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p> RuntimeException is thrown </br>because of the first print statement </p> ]]></option>
+                    <option><![CDATA[ <p> RuntimeException is thrown </br>because of the second print statement </p> ]]></option>
+                    <option> <![CDATA[<p> nullnullnullnull </p> ]]></option>
+                    <option><![CDATA[ <p> nullnull  </p>  ]]></option>
+                    <option><![CDATA[ <p> compilation error </p>]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[
+               <p>   What is the result of compiling and running the following code?</br></p>
+               <p>   public static void main(String ar gs []) {</br> </p>
+               <p> String s1 = null; </br> </p>
+               <p> String s2 = null; </br> </p>
+               <p> if (s1 == s2) </br> </p>
+               <p> System.out.print("A"); </br></p>
+               <p> if (s1.equals(s2)) </br></p>
+               <p> if (s1.equals(s2)) </br></p>
+               <p> System.out.print("B"); </br></p>
+              <p>  } </br></p>
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p> "AB" will be printed </p> ]]></option>
+                    <option><![CDATA[ <p> "A" will be printed followed be a   NullPointerException thrown </p> ]]></option>
+                    <option> <![CDATA[<p> "B" will be printed </p> ]]></option>
+                    <option><![CDATA[ <p> No output is produced </p> ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[
+
+             <p>   Which of the following methods can be invoked by an object of Pattern class? </br></p>
+             <p>  Please choose all the answers that apply:</br> </p>
+
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p> compile </p> ]]></option>
+                    <option><![CDATA[ <p> matches </p> ]]></option>
+                    <option> <![CDATA[<p> group </p> ]]></option>
+                    <option><![CDATA[ <p>  toString </p> ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[
+
+             <p>   What is the result of compiling and running the following program? </br></p>
+             <p>  public class Tester { </br> </p>
+             <p>  public static void main(String[] args) {</br> </p>
+             <p>  String a = "javachamp";</br> </p>
+             <p>   String b = "javachamp";</br> </p>
+             <p>   String c = new String("javachamp");</br> </p>
+             <p>    System.out.print(a==c);</br> </p>
+             <p>   System.out.print(b.equals(c));</br> </p>
+             <p>   System.out.print(b.equals(a));</br> </p>
+             <p>  }</br> </p>
+             <p>  }</br> </p>
+
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p>  Compilation error </p> ]]></option>
+                    <option><![CDATA[ <p> falsefalsetruetrue </p> ]]></option>
+                    <option> <![CDATA[<p> truetruetruetrue </p> ]]></option>
+                    <option><![CDATA[ <p>  truefalsetruetrue </p> ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[
+                 <p>   What is the result of compiling and running the following code? </br></p>
+                 <p>  public class Tester { </br> </p>
+                 <p>  public static void main(String[] args) {</br> </p>
+                 <p>  String stmt = "JavaChamp is here to help you";</br> </p>
+                 <p>   for (String token : stmt.split("//s")) {</br> </p>
+                 <p>   System.out.print(token + " ");</br> </p>
+                 <p>  }</br> </p>
+                 <p>  }</br> </p>
+                <p>  }</br> </p>
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p>   JavaChamp is here to help you </p> ]]></option>
+                    <option><![CDATA[ <p>  JavaChamp i here to help you </p> ]]></option>
+                    <option> <![CDATA[<p>   No output is produced </p> ]]></option>
+                    <option><![CDATA[ <p>  Compilation error </p> ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[
+             <p>   What is the correct answer? </br></p>
+             <p>   Please choose only one answer: </br> </p>
+             <p>  public static void main(String[] args) {</br> </p>
+             <p>  String stmt = "JavaChamp is here to help you";</br> </p>
+             <p>   for (String token : stmt.split("//s")) {</br> </p>
+             <p>   System.out.print(token + " ");</br> </p>
+             <p>  }</br> </p>
+             <p>  }</br> </p>
+            <p>  }</br> </p>
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p>  Stringbuffer method </p> ]]></option>
+                    <option><![CDATA[ <p>   String method </p> ]]></option>
+                    <option> <![CDATA[<p>   String method </p> ]]></option>
+                    <option><![CDATA[ <p> null </p> ]]></option>
+                    <option><![CDATA[ <p> Runtime Exception </p>]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
         </PracticeQuestions>
+
+
+
     </item>
 
     <item>
-        <topicName>variables </topicName>
+        <topicName> Constructors </topicName>
         <Description>In this page, we will learn about the variable and java data types. Variable is a name of memory location. There are three types of variables: local, instance and static. There are two types of datatypes in java, primitive and non-primitive.</Description>
         <Examples name="Examples">
             <Example> example 1</Example>
@@ -83,72 +252,176 @@
             <Example> example 3</Example>
         </Examples>
 
-        <PracticeQuestions name ="Practice">
+        <PracticeQuestions>
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
-                <Question>What is Your Name</Question>
+                <Question><![CDATA[
+             <p>  Can a constructor be declared static? </br></p>
+             <p>  Please choose only one answer: </p>
+             ]]></Question>
                 <options>
-                    <option> A 1  </option>
-                    <option> B  1</option>
-                    <option> C 1 </option>
-                    <option> D 1 </option>
-                    <option> D 1 </option>
+                    <option><![CDATA[ <p>Yes</p> ]]></option>
+                    <option><![CDATA[ <p>   No </p> ]]></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
+
             </PraacticeQuestion>
+
+
+
             <PraacticeQuestion>
                 <QuestionNo>2</QuestionNo>
-                <Question>What is Your AGE</Question>
+                <Question><![CDATA[
+             <p>      What are the legal modifiers which the constructor can be declared with? </br></p>
+             <p>   Please choose all the answers that apply: </br> </p>
+
+             ]]></Question>
                 <options>
-                    <option> A  2</option>
-                    <option> B  2</option>
-                    <option> C  2</option>
-                    <option> D  2</option>
-                    <option> D  2</option>
+                    <option><![CDATA[ <p>  public </p> ]]></option>
+                    <option><![CDATA[ <p>   protected </p> ]]></option>
+                    <option> <![CDATA[<p>  private </p> ]]></option>
+                    <option><![CDATA[ <p> final </p> ]]></option>
+                    <option><![CDATA[ <p> static </p>]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
 
             </PraacticeQuestion>
+
             <PraacticeQuestion>
                 <QuestionNo>3</QuestionNo>
-                <Question>What is Your PARTY</Question>
+                <Question><![CDATA[
+             <p>    What is the expected output? </br></p>
+             <p>     public class Profile { </br> </p>
+             <p>      private Profile(int w) { // line 1</br> </p>
+             <p>     System.out.println(w);</br> </p>
+             <p>    }  </br> </p>
+             <p>    public final Profile() { // line 5 </br> </p>
+             <p>    System.out.println(10);</br> </p>
+             <p>    }</br> </p>
+            <p>   public static void main(String args[]) {</br> </p>
+            <p>   Profile obj = new Profile(50);</br> </p>
+            <p>    }</br> </p>
+            <p>    }</br> </p>
+             ]]></Question>
                 <options>
-                    <option> A  3</option>
-                    <option> B  3</option>
-                    <option> C  3</option>
-                    <option> D  3</option>
-                    <option> A  3</option>
+                    <option><![CDATA[ <p>   Won't compile because of line (1)– constructor can't be private </p> ]]></option>
+                    <option><![CDATA[ <p>  Won't compile because of line (5) – constructor can't be final </p> ]]></option>
+                    <option> <![CDATA[<p>    50 </p> ]]></option>
+                    <option><![CDATA[ <p>  10 </p> ]]></option>
+                    <option><![CDATA[ <p> 50 </p>]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
-
             </PraacticeQuestion>
+
             <PraacticeQuestion>
                 <QuestionNo>4</QuestionNo>
-                <Question>What is Your HAIR</Question>
+                <Question><![CDATA[
+             <p>    What is the expected output? </br></p>
+             <p>     public class Profile { </br> </p>
+             <p>      private Profile(int w) { // line 1</br> </p>
+             <p>     System.out.println(w);</br> </p>
+             <p>    }  </br> </p>
+             <p>    public static Profile() { // line 5 </br> </p>
+             <p>    System.out.println(10);</br> </p>
+             <p>    }</br> </p>
+            <p>   public static void main(String args[]) {</br> </p>
+            <p>   Profile obj = new Profile(50);</br> </p>
+            <p>    }</br> </p>
+            <p>    }</br> </p>
+             ]]></Question>
                 <options>
-                    <option> A  4</option>
-                    <option> B  4</option>
-                    <option> C  4</option>
-                    <option> D  4</option>
-                    <option> A  3</option>
+                    <option><![CDATA[ <p>    Won't compile because of line (1) – constructor can't be private </p> ]]></option>
+                    <option><![CDATA[ <p>  10 </p> ]]></option>
+                    <option> <![CDATA[<p>    50 </p> ]]></option>
+                    <option><![CDATA[ <p>  50 </p> ]]></option>
+                    <option><![CDATA[ <p> Won't compile because of line (5) – constructor can't be static </p>]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
-
             </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[
+             <p>     What is the expected output? </br></p>
+             <p>    Please choose only one answer: </br> </p>
+             <p>      class Plant {</br> </p>
+             <p>      Plant() {</br> </p>
+             <p>     System.out.println("Plant created");  </br> </p>
+             <p>   }</br> </p>
+             <p>   }</br> </p>
+             <p>    class Tree extends Plant {</br> </p>
+            <p>   Tree() {</br> </p>
+            <p>     System.out.println("Tree created");</br> </p>
+            <p>    super();</br> </p>
+            <p>    }</br> </p>
+            <p>    }</br> </p>
+            <p>     public class Test {</br> </p>
+            <p>     public static void main(String args[]) {</br> </p>
+            <p>     Tree tree = new Tree();</br> </p>
+            <p>    }</br> </p>
+            <p>    }</br> </p>
+
+
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p>   Plant created
+                                   </br>Tree created </p> ]]></option>
+                    <option><![CDATA[ <p> Tree created
+                                 </br>Plant created </p> ]]></option>
+                    <option> <![CDATA[<p>     RuntimeException </p> ]]></option>
+                    <option><![CDATA[ <p>  Compilation error  </p> ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[
+             <p>      The following code contains one compilation error, where could it be? </br></p>
+             <p>    Please choose only one answer: </br> </p>
+             <p>      public class Tester {</br> </p>
+             <p>      Tester() { } // line 1 </br> </p>
+             <p>      static void Tester() { this(); } // line 2  </br> </p>
+             <p>    public static void main(String[] args) { // line 3</br> </p>
+             <p>    Tester(); // line 4</br> </p>
+            <p>    }</br> </p>
+            <p>    }</br> </p>
+             ]]></Question>
+                <options>
+                    <option><![CDATA[ <p>At line 1, constructor Tester must be </br>marked public like its class </p> ]]></option>
+                    <option><![CDATA[ <p>At line 2, constructor call "this()" </br>can only be called inside constructors</p> ]]></option>
+                    <option> <![CDATA[<p>At line 3, compilation error, ambiguity problem, compiler can"t determine wether a constructor </p> ]]></option>
+                    <option><![CDATA[ <p>Tester or method Tester is called </p> ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
         </PracticeQuestions>
-
-
     </item>
+
     <item>
-        <topicName>3rd Topic</topicName>
+        <topicName>Interfaces and Abstract Classes</topicName>
         <Description>Description</Description>
         <Examples name="Examples">
             <Example> example 1</Example>
@@ -218,6 +491,7 @@
             </PraacticeQuestion>
         </PracticeQuestions>
     </item>
+
     <item>
         <topicName>4th Topic</topicName>
         <Description>Description</Description>
@@ -287,5 +561,4 @@
             </PraacticeQuestion>
         </PracticeQuestions>
     </item>
-
 </Items>

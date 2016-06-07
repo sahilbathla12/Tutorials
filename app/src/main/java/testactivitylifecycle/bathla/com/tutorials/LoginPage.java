@@ -83,7 +83,7 @@ public class LoginPage extends Activity
         start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent = new Intent(LoginPage.this,MenuOption.class);
+               Intent intent = new Intent(LoginPage.this,TopicsListActivity.class);
             //    Intent intent = new Intent(LoginPage.this,TopicsListActivity.class);
                 startActivity(intent);
             }

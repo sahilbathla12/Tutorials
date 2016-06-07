@@ -148,6 +148,11 @@ public class QuizActivity extends Activity{
             @Override
             public void onClick(View v) {
 
+                if(questionNo < questionSize-1)
+                {
+                    nextBtn.setText("Next");
+                    // nextBtn.setVisibility(View.GONE);
+                }
                 prepareQuestions(--questionNo,false);
                 questionAnswersTV.setVisibility(View.GONE);
             }
@@ -161,6 +166,7 @@ public class QuizActivity extends Activity{
                 options="";
                 Log.d("questionNo","question is : "+questionNo+" question size"+questionSize);
 
+                questionTV.setFocusable(true);
                 questionAnswersTV.setVisibility(View.GONE);
                 Log.d("Radio","Test "+options);
 //
@@ -311,7 +317,7 @@ public class QuizActivity extends Activity{
         Log.d("QuesionNo","Question no : "+id);
 
       //  Log.d("question No is ","id : "+id);
-
+        questionTV.setFocusable(true);
         if(id==0)
         {
             prevBtn.setVisibility(View.GONE);
@@ -329,7 +335,7 @@ public class QuizActivity extends Activity{
 
 
         Log.d("Questions",dq.toString());
-        questionNoTV.setText(""+(id+1)+").");
+        questionNoTV.setText(""+(id+1)+".");
 
         questionTV.setText(Html.fromHtml(dq.get(id).getQuestion()));
 
@@ -358,15 +364,21 @@ public class QuizActivity extends Activity{
                 Log.d("VISIBLE","questionbtnAis Visible");
                 questionbtnA.setVisibility(View.VISIBLE);
 
-                questionbtnA.setText(dq.get(id).getOptions().get(0).toString());
+                questionbtnA.setText(Html.fromHtml(dq.get(id).getOptions().get(0).toString()));
+                questionbtnA.setMovementMethod(new ScrollingMovementMethod());
             }
+            else
+            {
+                Log.d("INVISIBLE","questionbtn A is InVisible");
+            }
+
 
             if(!dq.get(id).getOptions().get(1).toString().trim().equals(""))
             {
                 Log.d("VISIBLE","questionbtnB is Visible");
                 questionbtnB.setVisibility(View.VISIBLE);
 
-                questionbtnB.setText(dq.get(id).getOptions().get(1).toString());
+                questionbtnB.setText(Html.fromHtml(dq.get(id).getOptions().get(1).toString().trim()));
             }
             Log.d("question",""+(dq.get(id).getOptions().get(2).toString().trim().equals("")));
             Log.d("question",""+(dq.get(id).getOptions().get(2).toString() !=null));
@@ -376,7 +388,7 @@ public class QuizActivity extends Activity{
                 Log.d("VISIBLE","questionbtnC is Visible");
                 questionbtnC.setVisibility(View.VISIBLE);
 
-                questionbtnC.setText(dq.get(id).getOptions().get(2).toString());
+                questionbtnC.setText(Html.fromHtml(dq.get(id).getOptions().get(2).toString().trim()));
             }
 
             if(!(dq.get(id).getOptions().get(3).toString().trim().equals("")) )
@@ -384,14 +396,14 @@ public class QuizActivity extends Activity{
                 Log.d("VISIBLE","questionbtnD is Visible");
                 questionbtnD.setVisibility(View.VISIBLE);
 
-                questionbtnD.setText(dq.get(id).getOptions().get(3).toString());
+                questionbtnD.setText(Html.fromHtml(dq.get(id).getOptions().get(3).toString().trim()));
             }
             if(!(dq.get(questionNo).getOptions().get(4).toString().trim().equals("")) )
             {
                 Log.d("VISIBLE","questionbtnE is Visible");
                 questionbtnE.setVisibility(View.VISIBLE);
 
-                questionbtnE.setText(dq.get(id).getOptions().get(4).toString());
+                questionbtnE.setText(Html.fromHtml(dq.get(id).getOptions().get(4).toString().trim()));
             }
 
            // questionbtnE.setVisibility(View.GONE);
@@ -408,34 +420,34 @@ public class QuizActivity extends Activity{
             {
                 checkBoxButtonA.setVisibility(View.VISIBLE);
 
-                checkBoxButtonA.setText(dq.get(id).getOptions().get(0).toString());
+                checkBoxButtonA.setText(Html.fromHtml(dq.get(id).getOptions().get(0).toString().trim()));
             }
 
             if(!(dq.get(id).getOptions().get(1).toString().trim().equals("")))
             {
                 checkBoxButtonB.setVisibility(View.VISIBLE);
 
-                checkBoxButtonB.setText(dq.get(id).getOptions().get(1).toString());
+                checkBoxButtonB.setText(Html.fromHtml(dq.get(id).getOptions().get(1).toString().trim()));
             }
 
             if(!(dq.get(id).getOptions().get(2).toString().trim().equals("")) )
             {
                 checkBoxButtonC.setVisibility(View.VISIBLE);
 
-                checkBoxButtonC.setText(dq.get(id).getOptions().get(2).toString());
+                checkBoxButtonC.setText(Html.fromHtml(dq.get(id).getOptions().get(2).toString().trim()));
             }
 
             if(!(dq.get(questionNo).getOptions().get(3).toString().trim().equals("")))
             {
                 checkBoxButtonD.setVisibility(View.VISIBLE);
 
-                checkBoxButtonD.setText(dq.get(id).getOptions().get(3).toString());
+                checkBoxButtonD.setText(Html.fromHtml(dq.get(id).getOptions().get(3).toString().trim()));
             }
             if(!(dq.get(id).getOptions().get(4).toString().trim().equals("")))
             {
                 checkBoxButtonE.setVisibility(View.VISIBLE);
 
-                checkBoxButtonE.setText(dq.get(id).getOptions().get(4).toString());
+                checkBoxButtonE.setText(Html.fromHtml(dq.get(id).getOptions().get(4).toString().trim()));
             }
            // checkBoxButtonE.setVisibility(View.GONE);
             questionbtnA.setVisibility(View.GONE);
