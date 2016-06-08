@@ -17,14 +17,17 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
+        <!--<TextView
             android:id="@+id/detailedDescription"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:textSize="20dip"
-            android:layout_margin="20dip"/>
+            android:layout_margin="20dip"/>-->
+
         <WebView
+            android:id="@+id/webview"
             android:layout_width="match_parent"
-            android:layout_height=""></WebView>
+            android:layout_height="match_parent">
+        </WebView>
     </ScrollView>
 </LinearLayout>
