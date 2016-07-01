@@ -1402,7 +1402,8 @@
 
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
-                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+                <Question><![CDATA[
+								What is the result of compiling and running the following code? <br>
 								public class Tester {<br>
 								static int i ;<br>
 								private static int increment(int i) {<br>
@@ -1637,7 +1638,7 @@
 
             <PraacticeQuestion>
                 <QuestionNo>8</QuestionNo>
-                <Question><![CDATA[  What is the result of compiling and running the following code? <br>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
 									public class Test{ <br>
 									public static void main(String argv[]) { <br>
 									Foo x = new Foo(); <br>
@@ -1668,13 +1669,13 @@
             <PraacticeQuestion>
                 <QuestionNo>9</QuestionNo>
                 <Question><![CDATA[ What is the result of compiling and running the following code?<br>
-								public class Test{<br>
-								public static void main(String argv[]) {<br>
-								int a = 6;<br>
-								if (a = 6)<br>
-								System.out.print("true");<br>
-								}<br>
-								}<br>
+									public class Test{<br>
+									public static void main(String argv[]) {<br>
+									int a = 6;<br>
+									if (a = 6)<br>
+									System.out.print("true");<br>
+									}<br>
+									}<br>
 									Please choose only one answer:
 									]]>
                 </Question>
@@ -1695,12 +1696,12 @@
             <PraacticeQuestion>
                 <QuestionNo>10</QuestionNo>
                 <Question><![CDATA[ What is the result of compiling and running the following code?<br>
-								public static void main(String[] args) {<br>
-								System.out.print("4" + 5);<br>
-								System.out.print(4 + 5);<br>
-								System.out.print(4 + 5 + "9");<br>
-								}<br>
-								Please choose only one answer:
+									public static void main(String[] args) {<br>
+									System.out.print("4" + 5);<br>
+									System.out.print(4 + 5);<br>
+									System.out.print(4 + 5 + "9");<br>
+									}<br>
+									Please choose only one answer:
 									]]>
                 </Question>
                 <options>
@@ -1722,13 +1723,13 @@
             <PraacticeQuestion>
                 <QuestionNo>11</QuestionNo>
                 <Question><![CDATA[ What is the result of compiling and running the following code?<br>
-								public static void main(String[] args) {<br>
-								int x = 1, y = 0;<br>
-								if ((y == x++) && (x < ++y)) { }<br>
-								System.out.println(x + "" + y);<br>
-								}<br>
-								<br>
-								Please choose only one answer:
+									public static void main(String[] args) {<br>
+									int x = 1, y = 0;<br>
+									if ((y == x++) && (x < ++y)) { }<br>
+									System.out.println(x + "" + y);<br>
+									}<br>
+									<br>
+									Please choose only one answer:
 									]]>
                 </Question>
                 <options>
@@ -1864,7 +1865,7 @@
 
             <PraacticeQuestion>
                 <QuestionNo>5</QuestionNo>
-                <Question><![CDATA[What is the result of compiling and running the following code? <br>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
 									public class Tester {<br>
 									public static void main(String[] args) {<br>
 									int x = 1;<br>
@@ -1910,7 +1911,7 @@
             <PraacticeQuestion>
                 <QuestionNo>7</QuestionNo>
                 <Question><![CDATA[ Which of the following methods follow the JavaBean standards? <br>
-								Please choose all the answers that apply:<br>
+									Please choose all the answers that apply:<br>
 									]]>
                 </Question>
                 <options>
@@ -1927,7 +1928,7 @@
 
             <PraacticeQuestion>
                 <QuestionNo>8</QuestionNo>
-                <Question><![CDATA[  What is the result of compiling and running the following code? <br>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
 									public class Tester {<br>
 									public static void main(String[] args) {<br>
 									if(true){<br>
@@ -1958,17 +1959,17 @@
             <PraacticeQuestion>
                 <QuestionNo>9</QuestionNo>
                 <Question><![CDATA[ What is the result of compiling and running the following code?<br>
-								public class Tester {<br>
-								int x = 12;<br>
-								static void reset(Tester obj) {<br>
-								obj = null;<br>
-								}<br>
-								public static void main(String[] args) {<br>
-								Tester o1 = new Tester();<br>
-								reset(o1);<br>
-								System.out.print(o1.x);<br>
-								}<br>
-								}<br>
+									public class Tester {<br>
+									int x = 12;<br>
+									static void reset(Tester obj) {<br>
+									obj = null;<br>
+									}<br>
+									public static void main(String[] args) {<br>
+									Tester o1 = new Tester();<br>
+									reset(o1);<br>
+									System.out.print(o1.x);<br>
+									}<br>
+									}<br>
 									Please choose only one answer:
 									]]>
                 </Question>
@@ -1988,18 +1989,18 @@
             <PraacticeQuestion>
                 <QuestionNo>10</QuestionNo>
                 <Question><![CDATA[ What is the result of compiling and running the following code?<br>
-								public class Tester {<br>
-								final short s = 12; // Line 3<br>
-								static void swap( Tester obj) {<br>
-								obj.s = 11; // Line 6<br>
-								}<br>
-								public static void main(String[] args) {<br>
-								final Tester obj1 = new Tester();<br>
-								swap(obj1);<br>
-								System.out.print(obj1.s); // Line 12<br>
-								}<br>
-								}<br>
-								Please choose only one answer:
+									public class Tester {<br>
+									final short s = 12; // Line 3<br>
+									static void swap( Tester obj) {<br>
+									obj.s = 11; // Line 6<br>
+									}<br>
+									public static void main(String[] args) {<br>
+									final Tester obj1 = new Tester();<br>
+									swap(obj1);<br>
+									System.out.print(obj1.s); // Line 12<br>
+									}<br>
+									}<br>
+									Please choose only one answer:
 									]]>
                 </Question>
                 <options>
@@ -2019,21 +2020,21 @@
             <PraacticeQuestion>
                 <QuestionNo>11</QuestionNo>
                 <Question><![CDATA[ What is the output for following program?<br>
-								public class SomeClass {<br>
-								static int i ;<br>
-								private static int increment(int i) {<br>
-								return ++i;<br>
-								}<br>
-								public SomeClass() {<br>
-								i = 1;<br>
-								}<br>
-								public static void main(String[] args) {<br>
-								System.out.print(i);<br>
-								System.out.print( increment(i));<br>
-								System.out.print(i);<br>
-								}<br>
-								}<br>
-								Please choose only one answer:<br>
+									public class SomeClass {<br>
+									static int i ;<br>
+									private static int increment(int i) {<br>
+									return ++i;<br>
+									}<br>
+									public SomeClass() {<br>
+									i = 1;<br>
+									}<br>
+									public static void main(String[] args) {<br>
+									System.out.print(i);<br>
+									System.out.print( increment(i));<br>
+									System.out.print(i);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
 									]]>
                 </Question>
                 <options>
@@ -2231,7 +2232,7 @@
 
             <PraacticeQuestion>
                 <QuestionNo>7</QuestionNo>
-                <Question><![CDATA[  What is the result of compiling and running the following code?<br>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
 									class Base {<br>
 									public void Base() {<br>
 									System.out.print("Base");<br>
@@ -2300,31 +2301,31 @@
             <PraacticeQuestion>
                 <QuestionNo>9</QuestionNo>
                 <Question><![CDATA[ Which statement(s), inserted independently <br> at // insert code here, will compile? <br>
-								class Creature { <br>
-								String getName() { <br>
-								return "Creature"; <br>
-								} <br>
-								} <br>
-								class Bird extends Creature { <br>
-								String getName() { <br>
-								return "Bird"; <br>
-								} <br>
-								} <br>
-								class Falcon extends Bird { <br>
-								String getName() { <br>
-								return "Falcon"; <br>
-								} <br>
-								} <br>
-								public class Tester { <br>
-								public static Bird getIt(Creature c) { <br>
-								System.out.println(c.getName()); <br>
-								return (Bird) c; <br>
-								} <br>
-								public static void main(String[] args) { <br>
-								// insert code here <br>
-								} <br>
-								}<br>
-								Please choose all the answers that apply: <br>
+									class Creature { <br>
+									String getName() { <br>
+									return "Creature"; <br>
+									} <br>
+									} <br>
+									class Bird extends Creature { <br>
+									String getName() { <br>
+									return "Bird"; <br>
+									} <br>
+									} <br>
+									class Falcon extends Bird { <br>
+									String getName() { <br>
+									return "Falcon"; <br>
+									} <br>
+									} <br>
+									public class Tester { <br>
+									public static Bird getIt(Creature c) { <br>
+									System.out.println(c.getName()); <br>
+									return (Bird) c; <br>
+									} <br>
+									public static void main(String[] args) { <br>
+									// insert code here <br>
+									} <br>
+									}<br>
+									Please choose all the answers that apply: <br>
 									]]>
                 </Question>
                 <options>
