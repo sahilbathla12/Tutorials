@@ -1,36 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@color/activity_backGroundColor"
     android:layout_height="match_parent"
     android:weightSum="1">
 
 
-    <TextView
-        android:id="@+id/resultcomment"
-        android:gravity="center_vertical"
+    <!-- Load the toolbar here -->
+    <include
 
-        android:textSize="30dip"
-        android:textColor="@color/textColor"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:text="10/10" />
+        layout="@layout/activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/result"
-        android:textSize="30dip"
-        android:textColor="@color/textColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Nice ScoreSS"
-        />
+    <!-- Rest of content for the activity -->
+    <LinearLayout
 
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/showExplanation"
-        android:background="@color/btn_backgroundColor"
-        android:textColor="@color/textColor"/>
-</LinearLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/resultcomment"
+            android:gravity="center_vertical"
+            android:textSize="30dip"
+            android:textColor="@color/questionTextColor"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="10/10" />
+
+        <TextView
+            android:id="@+id/result"
+            android:textSize="30dip"
+            android:textColor="@color/questionTextColor"
+            android:layout_width="wrap_content"
+            android:layout_margin="20dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Nice ScoreS"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/showExplanation"
+            android:text="SHow Answers Butoon"
+            android:background="@color/btn_backgroundColor"
+            android:textColor="@color/textColor"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

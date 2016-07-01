@@ -80,14 +80,14 @@ public class ListViewActivity extends Activity {
 
             View row = inflater.inflate(R.layout.layout_row, parent, false);
             this.Heading = (TextView) row.findViewById(R.id.list_headings);
-            this.examples = (Button) row.findViewById(R.id.list_examples);
+          /*  this.examples = (Button) row.findViewById(R.id.list_examples);
             this.practice = (Button) row.findViewById(R.id.list_Practice);
-
+*/
             Log.d("ListViewActivity","Topic is  : "+this.list_Topics[position]);
             Heading.setText(this.list_Topics[position]);
-            examples.setText("EXAMPLES");
+           /* examples.setText("EXAMPLES");
             practice.setText("Practice");
-
+*/
             this.Heading.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -96,7 +96,7 @@ public class ListViewActivity extends Activity {
                 }
             });
 
-            this.practice.setOnClickListener(new View.OnClickListener() {
+           /* this.practice.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -109,7 +109,7 @@ public class ListViewActivity extends Activity {
 
                     Toast.makeText(getApplicationContext(),"Clicked On "+position,Toast.LENGTH_LONG).show();
                 }
-            });
+            });*/
 
             return row;
         }

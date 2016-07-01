@@ -3,7 +3,11 @@ package testactivitylifecycle.bathla.com.tutorials;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,7 +19,7 @@ import java.util.Map;
 /**
  * Created by bathla on 5/29/2016.
  */
-public class ResultActivity extends Activity{
+public class ResultActivity extends AppCompatActivity{
 
     TextView ResulttextView = null;
     TextView CommenttextView = null;
@@ -26,6 +30,21 @@ public class ResultActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+
+        // Find the toolbar view and set as ActionBar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+// ...
+// Display icon in the toolbar
+        ActionBar ab = getSupportActionBar();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //   getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         ResulttextView = (TextView) findViewById(R.id.result);
         CommenttextView= (TextView) findViewById(R.id.resultcomment);
         resultButton = (Button) findViewById(R.id.showExplanation);
@@ -96,5 +115,12 @@ public class ResultActivity extends Activity{
                 startActivity(intent1);
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_tutorials, menu);
+        return true;
+
     }
 }

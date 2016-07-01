@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/activity_backGroundColor"
     android:layout_weight="10"
+
     android:orientation="vertical">
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@color/textColor"
+        android:background="@color/actionBarBackgroundColor">
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -145,6 +157,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
+
         android:layout_weight="15"
         android:id="@+id/welcome_layout"
         android:orientation="vertical">
@@ -156,7 +169,7 @@
             android:text="Hi"
             android:layout_weight="5"
             android:textSize="30dip"
-            android:textColor="#ffffff"
+            android:textColor="@color/questionTextColor"
             android:textAlignment="center"
             android:layout_margin="10dip"
             android:layout_centerHorizontal="true"
@@ -170,8 +183,8 @@
             android:text="Let's Start"
             android:layout_margin="10dip"
             android:layout_weight="10"
-            android:textColor="#ffffff"
-            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/textColor"
+            android:background="@color/btn_backgroundColor"
             android:textStyle="bold"
             android:gravity="center"
             android:textSize="30dip"/>

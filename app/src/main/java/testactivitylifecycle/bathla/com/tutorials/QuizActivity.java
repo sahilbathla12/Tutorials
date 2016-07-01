@@ -3,10 +3,16 @@ package testactivitylifecycle.bathla.com.tutorials;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,7 +31,7 @@ import java.util.Map;
 /**
  * Created by bathla on 5/22/2016.
  */
-public class QuizActivity extends Activity{
+public class QuizActivity extends AppCompatActivity{
 
     int questionSize;
     Button prevBtn;
@@ -61,6 +67,19 @@ public class QuizActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions_design);
+
+        // Find the toolbar view and set as ActionBar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+// ...
+// Display icon in the toolbar
+        ActionBar ab = getSupportActionBar();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+     //   getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         checkBoxLinearLayout = (LinearLayout) findViewById(R.id.linearLayout_checkBoxes);
@@ -178,6 +197,7 @@ public class QuizActivity extends Activity{
 
                 questionRG.clearCheck();
 
+
                 if(checkBoxButtonA.isChecked())
                 {
                     checkBoxButtonA.toggle();
@@ -205,7 +225,10 @@ public class QuizActivity extends Activity{
                     options+="E";
                 }
 
+                if(answers.get(questionNo)!=null)
+                {
 
+                }
 
                     Log.d("options","options is :"+options);
 
@@ -334,6 +357,7 @@ public class QuizActivity extends Activity{
         }
 
 
+
         Log.d("Questions",dq.toString());
         questionNoTV.setText(""+(id+1)+".");
 
@@ -353,6 +377,14 @@ public class QuizActivity extends Activity{
 
 
 
+       /* RadioGroup.LayoutParams layoutParams = new RadioGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(0, 32, 0, 0);
+        RadioButton rButton = new RadioButton(this);
+        rButton.setText("stuff");
+        rButton.setLayoutParams(layoutParams);
+        rButton.setPadding(140, 0, 40, 0);
+        radioGroupPair.addView(rButton);*/
 
         if(dq.get(id).getTypeOfQuestion().equals("Single"))
         {
@@ -365,7 +397,8 @@ public class QuizActivity extends Activity{
                 questionbtnA.setVisibility(View.VISIBLE);
 
                 questionbtnA.setText(Html.fromHtml(dq.get(id).getOptions().get(0).toString()));
-                questionbtnA.setMovementMethod(new ScrollingMovementMethod());
+
+             //   questionbtnA.setMovementMethod(new ScrollingMovementMethod());
             }
             else
             {
@@ -505,5 +538,25 @@ public class QuizActivity extends Activity{
         Log.d("Options","options : "+options);
 
     }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_tutorials, menu);
+
+
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 

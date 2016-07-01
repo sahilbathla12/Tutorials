@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,22 +12,9 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ToolbarTheme"
         android:elevation="4dip"
+
         app:titleTextColor="@color/textColor"
         android:background="@color/actionBarBackgroundColor"
         app:titleTextAppearance="@style/Toolbar.TitleText"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_marginTop="5dip"
-
-        android:layout_below="@+id/toolbar"
-        android:descendantFocusability="blocksDescendants"
-        android:layout_height="match_parent"
-        android:background="@color/activity_backGroundColor"
-        android:id="@+id/listViews">
-
-    </ListView>
-
-
-</RelativeLayout>
+</LinearLayout>

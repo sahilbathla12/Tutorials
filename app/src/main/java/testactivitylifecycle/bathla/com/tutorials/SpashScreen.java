@@ -37,7 +37,7 @@ public class SpashScreen extends Activity {
     private GoogleApiClient client;
     public static SharedPreferences sh;
     public static SharedPreferences.Editor editor;
-
+    boolean startActivity= true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +60,7 @@ public class SpashScreen extends Activity {
     class SplashScreenThread implements Runnable {
         @Override
 
+
         public void run() {
 
             sh = getSharedPreferences("myprefe", 0);
@@ -80,6 +81,7 @@ public class SpashScreen extends Activity {
                 loadXMLTaks.execute(dataBaseItems);
                 editor.putString("LoadXML","Loaded");
                 editor.commit();
+
             }
             else
             {
@@ -87,11 +89,17 @@ public class SpashScreen extends Activity {
 
             }
 
+            if(loadXML != null) {
+                //Intent intent = new Intent(getApplicationContext(),TopicsListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), TopicsListActivity.class);
 
+                startActivity(intent);
+                finish();
+            }
 
             try {
                 Log.d("SplashScreenThread", "We are in Splash Screen Thread");
-                Thread.sleep(2000);
+                Thread.sleep(5000);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -99,10 +107,6 @@ public class SpashScreen extends Activity {
 
 
 
-            //Intent intent = new Intent(getApplicationContext(),TopicsListActivity.class);
-            Intent intent = new Intent(getApplicationContext(), LoginPage.class);
-
-            startActivity(intent);
         }
     }
 
@@ -119,6 +123,14 @@ public class SpashScreen extends Activity {
         @Override
         protected void onPostExecute(Object aVoid) {
             super.onPostExecute(aVoid);
+
+            if(startActivity= true) {
+                //Intent intent = new Intent(getApplicationContext(),TopicsListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), TopicsListActivity.class);
+
+                startActivity(intent);
+                finish();
+            }
         }
 
         @Override
@@ -137,6 +149,7 @@ public class SpashScreen extends Activity {
     static  int a=0;
     public void loadDataBaseXML()
     {
+        startActivity= false;
         try {
 
             InputStream ins = getResources().openRawResource(R.raw.database);
@@ -180,6 +193,7 @@ public class SpashScreen extends Activity {
             }
             helper.getTopics();
             helper.getDescription();
+            startActivity= true;
             Log.d("TOPIC","TOPICS TABLE CREATED");
 
         } catch (Exception e) {

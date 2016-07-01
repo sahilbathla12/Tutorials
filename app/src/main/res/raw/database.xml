@@ -12,24 +12,103 @@
         <PracticeQuestions name ="Practice">
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
-                <Question><![CDATA[<p>What is the expected output?</br>public static void main(String[] args) {</p></br><p>boolean stmt1 = "champ" == "champ";</p></br><p>boolean stmt2 = new String("champ") == "champ";</p></br><p>boolean stmt3 = new String("champ") == new String("champ");</p></br><p>System.out.println(stmt1 &amp;&amp; stmt2 || stmt3);</p></br>}]]>
-                </Question>
+                <Question><![CDATA[
+                   What is the expected output? <br>
+                   public static void main(String args []) {
+                   String stmt = null;<br>
+                   System.out.print(null+stmt);<br>
+                   System.out.print(stmt+null);<br>
+                   }
+             ]]></Question>
                 <options>
-                    <option>true</option>
-                    <option>False</option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
+                    <option><![CDATA[  RuntimeException is thrown <br> because of the first print statement ]]></option>
+                    <option><![CDATA[  RuntimeException is thrown <br> because of the second print statement ]]></option>
+                    <option> <![CDATA[ nullnullnullnull ]]></option>
+                    <option><![CDATA[  nullnull   ]]></option>
+                    <option><![CDATA[  compilation error ]]></option>
                 </options>
-                <TypeofQuestion>Multiple</TypeofQuestion>
-                <Answer>AB</Answer>
-                <Explanation>SAHIL</Explanation>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>By Default value of String is null So null+null is possible</Explanation>
             </PraacticeQuestion>
 
             <PraacticeQuestion>
                 <QuestionNo>2</QuestionNo>
                 <Question><![CDATA[
-                    <p>What is the expected output?</br>public static void main(String[] args) {</br>boolean stmt1 = "champ" == "champ";</br> boolean stmt2 = new String("champ").equals(new String("champ"));</br>boolean stmt3 = "champ".toString()=="champ";</br>System.out.println(stmt1 &amp;&amp; stmt2 &amp;&amp; stmt3);</br>}</p>
+               What is the expected output? <br>
+               public static void main(String args []) {
+               String stmt = "test";<br>
+               System.out.print(null+stmt);<br>
+               System.out.print(stmt+null);<br>
+               }
+             ]]></Question>
+                <options>
+                    <option><![CDATA[  RuntimeException is thrown <br> because of the first print statement ]]></option>
+                    <option><![CDATA[  RuntimeException is thrown <br> because of the second print statement ]]></option>
+                    <option> <![CDATA[ nulltesttestnull ]]></option>
+                    <option><![CDATA[  nulltest   ]]></option>
+                    <option><![CDATA[  compilation error ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>By Default value of String is null So null+test and viceversa is possible</Explanation>
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[
+               What is the expected output? <br>
+               public static void main(String args []) {
+               String stmt = "test";<br>
+               System.out.print(stmt.concat(null));<br>
+               System.out.print(null.concat(stmt));<br>
+               }
+             ]]></Question>
+                <options>
+                    <option><![CDATA[  RuntimeException is thrown <br> because of the first print statement ]]></option>
+                    <option><![CDATA[  RuntimeException is thrown <br> because of the second print statement ]]></option>
+                    <option> <![CDATA[ nulltesttestnull ]]></option>
+                    <option><![CDATA[  nulltest   ]]></option>
+                    <option><![CDATA[  compilation error ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>AB</Answer>
+                <Explanation>NullPointerException is thrown at 1st and 2nd Print Statement, Operation can not be performed on null object</Explanation>
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question>
+                    <![CDATA[
+                    What is the expected output?<br>
+                    public static void main(String[] args) {<br>
+                    boolean stmt1 = "test" == "test";<br>
+                    boolean stmt2 = new String("test") == "test";<br>
+                    boolean stmt3 = new String("test") == new String("test");<br>
+                    System.out.println(stmt1 &amp;&amp; stmt2 || stmt3);<br>
+                    }<br>
+                    ]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ true ]]></option>
+                    <option><![CDATA[ False ]]></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation><![CDATA[ stmt1 = true<br> Stmt2 = false<br>stmt3 = false<br> ==  check for Address of String.<br> String defined without new Operator  stored in StringConstant pool. <br>stmt =test stores in S.C.P ]]></Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[
+                    What is the expected output?<br>
+                    public static void main(String[] args) {<br>
+                    boolean stmt1 = "test" == "test";<br>
+                    boolean stmt2 = new String("test").equals(new String("test"));<br>
+                    boolean stmt3 = "test".toString()=="test";<br>
+                    System.out.println(stmt1 &amp;&amp; stmt2 &amp;&amp; stmt3);<br>
+                    }
                     ]]></Question>
                 <options>
                     <option> true  </option>
@@ -40,15 +119,13 @@
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Explanation><![CDATA[ stmt1 = true<br> Stmt2 = true<br>stmt3 = true<br> ==  check for Address of String.<brString defined with new Operator not stored in StringConstant pool<br> equals method checks for content<br> "test".toString() also stores in String Constant pool.]]></Explanation>
             </PraacticeQuestion>
 
             <PraacticeQuestion>
-                <QuestionNo>3</QuestionNo>
+                <QuestionNo>6</QuestionNo>
                 <Question><![CDATA[
-                <p> Select the common methods, </br> </p>
-                    <p>which are defined for both type String and type StringBuffer ? </br>
-                    </p>
+                 Select the common methods, <br> which are defined for both type <br> String and type StringBuffer ? <br>
                 ]]></Question>
                 <options>
                     <option> toString()</option>
@@ -58,14 +135,28 @@
                     <option> equals(Object)</option>
                 </options>
                 <TypeofQuestion>Multiple</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>ABE</Answer>
+                <Explanation>toString() and equals(Object) are defined on the object class and both have length Method</Explanation>
 
             </PraacticeQuestion>
 
             <PraacticeQuestion>
-                <QuestionNo>4</QuestionNo>
-                <Question><![CDATA[<p>public class Tester {</p><p>public static void main(String[] args) {</p><p>StringBuffer sb1 = new StringBuffer("javachamp");</p><p>StringBuffer sb2 = new StringBuffer("javachamp");</p><p>boolean stmt1 =sb1.equals(sb2) ;</p><p>boolean stmt2 = sb1 == sb2;</p>String s1 = new String("javachamp");</p><p> String s2 = new String("javachamp");</p><p>boolean stmt3 = s1.equals(s2);</p><p>boolean stmt4 = s1 == s2;</p><p>}</p><p> }</p> ]]></Question>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[
+				Which of the statements would evaluate to true?<br>
+                public class Tester {<br>
+                public static void main(String[] args) {<br>
+                StringBuffer sb1 = new StringBuffer("test");<br>
+                StringBuffer sb2 = new StringBuffer("test");<br>
+                boolean stmt1 =sb1.equals(sb2) ;<br>
+                boolean stmt2 = sb1 == sb2;<br>
+                String s1 = new String("test");<br>
+                String s2 = new String("test");<br>
+                boolean stmt3 = s1.equals(s2);<br>
+                boolean stmt4 = s1 == s2;<br>
+                }<br>
+                }
+                ]]></Question>
                 <options>
                     <option> stmt 1</option>
                     <option> stmt 2</option>
@@ -74,139 +165,34 @@
                     <option> </option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
-
-            </PraacticeQuestion>
-
-
-
-            <PraacticeQuestion>
-                <QuestionNo>5</QuestionNo>
-                <Question><![CDATA[
-                <p>What is the expected output? </br></p>
-               <p>public static void main(String args []) {</p>
-               <p>  String stmt = null;</br> </p>
-               <p>  System.out.print(null+stmt);</br> </p>
-               <p>  System.out.print(stmt+null);</br> </p>
-               <p>  }</p>
-             ]]></Question>
-                <options>
-                    <option><![CDATA[ <p> RuntimeException is thrown </br>because of the first print statement </p> ]]></option>
-                    <option><![CDATA[ <p> RuntimeException is thrown </br>because of the second print statement </p> ]]></option>
-                    <option> <![CDATA[<p> nullnullnullnull </p> ]]></option>
-                    <option><![CDATA[ <p> nullnull  </p>  ]]></option>
-                    <option><![CDATA[ <p> compilation error </p>]]></option>
-                </options>
-                <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
-            </PraacticeQuestion>
-
-
-
-            <PraacticeQuestion>
-                <QuestionNo>6</QuestionNo>
-                <Question><![CDATA[
-               <p>   What is the result of compiling and running the following code?</br></p>
-               <p>   public static void main(String ar gs []) {</br> </p>
-               <p> String s1 = null; </br> </p>
-               <p> String s2 = null; </br> </p>
-               <p> if (s1 == s2) </br> </p>
-               <p> System.out.print("A"); </br></p>
-               <p> if (s1.equals(s2)) </br></p>
-               <p> if (s1.equals(s2)) </br></p>
-               <p> System.out.print("B"); </br></p>
-              <p>  } </br></p>
-             ]]></Question>
-                <options>
-                    <option><![CDATA[ <p> "AB" will be printed </p> ]]></option>
-                    <option><![CDATA[ <p> "A" will be printed followed be a   NullPointerException thrown </p> ]]></option>
-                    <option> <![CDATA[<p> "B" will be printed </p> ]]></option>
-                    <option><![CDATA[ <p> No output is produced </p> ]]></option>
-                    <option></option>
-                </options>
-                <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
-
-            </PraacticeQuestion>
-
-
-            <PraacticeQuestion>
-                <QuestionNo>7</QuestionNo>
-                <Question><![CDATA[
-
-             <p>   Which of the following methods can be invoked by an object of Pattern class? </br></p>
-             <p>  Please choose all the answers that apply:</br> </p>
-
-             ]]></Question>
-                <options>
-                    <option><![CDATA[ <p> compile </p> ]]></option>
-                    <option><![CDATA[ <p> matches </p> ]]></option>
-                    <option> <![CDATA[<p> group </p> ]]></option>
-                    <option><![CDATA[ <p>  toString </p> ]]></option>
-                    <option></option>
-                </options>
-                <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>C</Answer>
+                <Explanation>Equals methods only define in String Class for content but String buffer doesn't contain equals Method</Explanation>
 
             </PraacticeQuestion>
 
             <PraacticeQuestion>
                 <QuestionNo>8</QuestionNo>
                 <Question><![CDATA[
-
-             <p>   What is the result of compiling and running the following program? </br></p>
-             <p>  public class Tester { </br> </p>
-             <p>  public static void main(String[] args) {</br> </p>
-             <p>  String a = "javachamp";</br> </p>
-             <p>   String b = "javachamp";</br> </p>
-             <p>   String c = new String("javachamp");</br> </p>
-             <p>    System.out.print(a==c);</br> </p>
-             <p>   System.out.print(b.equals(c));</br> </p>
-             <p>   System.out.print(b.equals(a));</br> </p>
-             <p>  }</br> </p>
-             <p>  }</br> </p>
-
+                 What is the result of compiling and running the following code?<br>
+                 public static void main(String args []) {<br>
+                 String s1 = null; <br>
+                 String s2 = null; <br>
+                 if (s1 == s2) <br>
+                 System.out.print("A"); <br>
+                 if (s1.equals(s2)) <br>
+                 System.out.print("B"); <br>
+                } <br>
              ]]></Question>
                 <options>
-                    <option><![CDATA[ <p>  Compilation error </p> ]]></option>
-                    <option><![CDATA[ <p> falsefalsetruetrue </p> ]]></option>
-                    <option> <![CDATA[<p> truetruetruetrue </p> ]]></option>
-                    <option><![CDATA[ <p>  truefalsetruetrue </p> ]]></option>
+                    <option><![CDATA[  "AB" will be printed ]]></option>
+                    <option><![CDATA[  "A" will be printed followed be a NullPointerException thrown ]]></option>
+                    <option><![CDATA[ "B" will be printed ]]></option>
+                    <option><![CDATA[  No output is produced ]]></option>
                     <option></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
-
-            </PraacticeQuestion>
-
-            <PraacticeQuestion>
-                <QuestionNo>9</QuestionNo>
-                <Question><![CDATA[
-                 <p>   What is the result of compiling and running the following code? </br></p>
-                 <p>  public class Tester { </br> </p>
-                 <p>  public static void main(String[] args) {</br> </p>
-                 <p>  String stmt = "JavaChamp is here to help you";</br> </p>
-                 <p>   for (String token : stmt.split("//s")) {</br> </p>
-                 <p>   System.out.print(token + " ");</br> </p>
-                 <p>  }</br> </p>
-                 <p>  }</br> </p>
-                <p>  }</br> </p>
-             ]]></Question>
-                <options>
-                    <option><![CDATA[ <p>   JavaChamp is here to help you </p> ]]></option>
-                    <option><![CDATA[ <p>  JavaChamp i here to help you </p> ]]></option>
-                    <option> <![CDATA[<p>   No output is produced </p> ]]></option>
-                    <option><![CDATA[ <p>  Compilation error </p> ]]></option>
-                    <option></option>
-                </options>
-                <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>B</Answer>
+                <Explanation>can't perform operation on null reference </Explanation>
 
             </PraacticeQuestion>
 
@@ -214,26 +200,73 @@
             <PraacticeQuestion>
                 <QuestionNo>9</QuestionNo>
                 <Question><![CDATA[
-             <p>   What is the correct answer? </br></p>
-             <p>   Please choose only one answer: </br> </p>
-             <p>  public static void main(String[] args) {</br> </p>
-             <p>  String stmt = "JavaChamp is here to help you";</br> </p>
-             <p>   for (String token : stmt.split("//s")) {</br> </p>
-             <p>   System.out.print(token + " ");</br> </p>
-             <p>  }</br> </p>
-             <p>  }</br> </p>
-            <p>  }</br> </p>
+                Which of the following methods can be <br> invoked by an object of Pattern class? <br>
+               Please choose all the answers that apply:<br>
              ]]></Question>
                 <options>
-                    <option><![CDATA[ <p>  Stringbuffer method </p> ]]></option>
-                    <option><![CDATA[ <p>   String method </p> ]]></option>
-                    <option> <![CDATA[<p>   String method </p> ]]></option>
-                    <option><![CDATA[ <p> null </p> ]]></option>
-                    <option><![CDATA[ <p> Runtime Exception </p>]]></option>
+                    <option><![CDATA[  compile ]]></option>
+                    <option><![CDATA[  matches ]]></option>
+                    <option> <![CDATA[ group ]]></option>
+                    <option><![CDATA[  toString ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>ABD</Answer>
+                <Explanation>group is present in Mathcer Class</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>10</QuestionNo>
+                <Question><![CDATA[
+				What is the result of compiling and running the following program? <br>
+				public class Tester { <br>
+				public static void main(String[] args) {<br>
+				String a = "test";<br>
+                String b = "test";<br>
+                String c = new String("test");<br>
+                System.out.print(a==c);<br>
+                System.out.print(b.equals(c));<br>
+                System.out.print(b.equals(a));<br>
+               }<br>
+               }<br>
+             ]]></Question>
+                <options>
+                    <option><![CDATA[   Compilation error ]]></option>
+                    <option><![CDATA[  falsetruetrue ]]></option>
+                    <option> <![CDATA[ truetruetrue ]]></option>
+                    <option><![CDATA[   truefalsetrue ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation> == check for the oreference and  equals checks for the content </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>11</QuestionNo>
+                <Question><![CDATA[
+                   What is the result of compiling and running the following code? <br>
+                   public class Tester { <br>
+                   public static void main(String[] args) {<br>
+                   String stmt = "He is here to help you";<br>
+                   for (String token : stmt.split("//s")) {<br>
+                   System.out.print(token + " ");<br>
+                   }<br>
+                   }<br>
+                   }<br>
+                   ]]></Question>
+                <options>
+                    <option><![CDATA[    He is here to help you ]]></option>
+                    <option><![CDATA[    he i here to help you ]]></option>
+                    <option> <![CDATA[   No output is produced ]]></option>
+                    <option><![CDATA[    Compilation error ]]></option>
+                    <option></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Explanation>its //s --> not \\s</Explanation>
 
             </PraacticeQuestion>
 
@@ -256,19 +289,19 @@
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
                 <Question><![CDATA[
-             <p>  Can a constructor be declared static? </br></p>
-             <p>  Please choose only one answer: </p>
-             ]]></Question>
+                 Can a constructor be declared static?<br>
+                 Please choose only one answer:
+                 ]]></Question>
                 <options>
-                    <option><![CDATA[ <p>Yes</p> ]]></option>
-                    <option><![CDATA[ <p>   No </p> ]]></option>
+                    <option><![CDATA[  Yes  ]]></option>
+                    <option><![CDATA[  No  ]]></option>
                     <option></option>
                     <option></option>
                     <option></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>B</Answer>
+                <Explanation>constructor always refers to Object ans static refers to class</Explanation>
 
             </PraacticeQuestion>
 
@@ -277,77 +310,77 @@
             <PraacticeQuestion>
                 <QuestionNo>2</QuestionNo>
                 <Question><![CDATA[
-             <p>      What are the legal modifiers which the constructor can be declared with? </br></p>
-             <p>   Please choose all the answers that apply: </br> </p>
+                   What are the legal modifiers which the constructor can be declared with? <br>
+                   Please choose all the answers that apply: <br>
 
-             ]]></Question>
+                 ]]></Question>
                 <options>
-                    <option><![CDATA[ <p>  public </p> ]]></option>
-                    <option><![CDATA[ <p>   protected </p> ]]></option>
-                    <option> <![CDATA[<p>  private </p> ]]></option>
-                    <option><![CDATA[ <p> final </p> ]]></option>
-                    <option><![CDATA[ <p> static </p>]]></option>
+                    <option><![CDATA[   public ]]></option>
+                    <option><![CDATA[    protected ]]></option>
+                    <option> <![CDATA[  private ]]></option>
+                    <option><![CDATA[  final ]]></option>
+                    <option><![CDATA[  static ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>ABC</Answer>
+                <Explanation>Constructor can be declared only public, private and protected</Explanation>
 
             </PraacticeQuestion>
 
             <PraacticeQuestion>
                 <QuestionNo>3</QuestionNo>
                 <Question><![CDATA[
-             <p>    What is the expected output? </br></p>
-             <p>     public class Profile { </br> </p>
-             <p>      private Profile(int w) { // line 1</br> </p>
-             <p>     System.out.println(w);</br> </p>
-             <p>    }  </br> </p>
-             <p>    public final Profile() { // line 5 </br> </p>
-             <p>    System.out.println(10);</br> </p>
-             <p>    }</br> </p>
-            <p>   public static void main(String args[]) {</br> </p>
-            <p>   Profile obj = new Profile(50);</br> </p>
-            <p>    }</br> </p>
-            <p>    }</br> </p>
-             ]]></Question>
+                What is the expected output? <br>
+                public class Profile { <br>
+                private Profile(int w) { // line 1<br>
+                System.out.println(w);<br>
+                }  <br>
+                public final Profile() { // line 5 <br>
+                System.out.println(10);<br>
+                }<br>
+                public static void main(String args[]) {<br>
+                Profile obj = new Profile(50);<br>
+                }<br>
+                }<br>
+                ]]></Question>
                 <options>
-                    <option><![CDATA[ <p>   Won't compile because of line (1)– constructor can't be private </p> ]]></option>
-                    <option><![CDATA[ <p>  Won't compile because of line (5) – constructor can't be final </p> ]]></option>
-                    <option> <![CDATA[<p>    50 </p> ]]></option>
-                    <option><![CDATA[ <p>  10 </p> ]]></option>
-                    <option><![CDATA[ <p> 50 </p>]]></option>
+                    <option><![CDATA[    Won't compile because of line (1)<br>– constructor can't be private ]]></option>
+                    <option><![CDATA[   Won't compile because of line (5)<br> – constructor can't be final ]]></option>
+                    <option> <![CDATA[    50 ]]></option>
+                    <option><![CDATA[   10 ]]></option>
+                    <option><![CDATA[  50 ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>B</Answer>
+                <Explanation>Constructor can be declared only public, private and protected</Explanation>
             </PraacticeQuestion>
 
             <PraacticeQuestion>
                 <QuestionNo>4</QuestionNo>
                 <Question><![CDATA[
-             <p>    What is the expected output? </br></p>
-             <p>     public class Profile { </br> </p>
-             <p>      private Profile(int w) { // line 1</br> </p>
-             <p>     System.out.println(w);</br> </p>
-             <p>    }  </br> </p>
-             <p>    public static Profile() { // line 5 </br> </p>
-             <p>    System.out.println(10);</br> </p>
-             <p>    }</br> </p>
-            <p>   public static void main(String args[]) {</br> </p>
-            <p>   Profile obj = new Profile(50);</br> </p>
-            <p>    }</br> </p>
-            <p>    }</br> </p>
-             ]]></Question>
+                 What is the expected output? <br>
+                 public class Profile { <br>
+                 private Profile(int w) { // line 1<br>
+                 System.out.println(w);<br>
+                 }  <br>
+                 public static Profile() { // line 5 <br>
+                 System.out.println(10);<br>
+                 }<br>
+                 public static void main(String args[]) {<br>
+                 Profile obj = new Profile(50);<br>
+                 }<br>
+                 }<br>
+                ]]></Question>
                 <options>
-                    <option><![CDATA[ <p>    Won't compile because of line (1) – constructor can't be private </p> ]]></option>
-                    <option><![CDATA[ <p>  10 </p> ]]></option>
-                    <option> <![CDATA[<p>    50 </p> ]]></option>
-                    <option><![CDATA[ <p>  50 </p> ]]></option>
-                    <option><![CDATA[ <p> Won't compile because of line (5) – constructor can't be static </p>]]></option>
+                    <option><![CDATA[  Won't compile because of line (1) – constructor can't be private ]]></option>
+                    <option><![CDATA[ 10 ]]></option>
+                    <option> <![CDATA[ 50 ]]></option>
+                    <option><![CDATA[  50 ]]></option>
+                    <option><![CDATA[  Won't compile because of line (5) – constructor can't be static ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>E</Answer>
+                <Explanation>Constructor can be declared only public, private and protected</Explanation>
             </PraacticeQuestion>
 
 
@@ -355,66 +388,155 @@
             <PraacticeQuestion>
                 <QuestionNo>5</QuestionNo>
                 <Question><![CDATA[
-             <p>     What is the expected output? </br></p>
-             <p>    Please choose only one answer: </br> </p>
-             <p>      class Plant {</br> </p>
-             <p>      Plant() {</br> </p>
-             <p>     System.out.println("Plant created");  </br> </p>
-             <p>   }</br> </p>
-             <p>   }</br> </p>
-             <p>    class Tree extends Plant {</br> </p>
-            <p>   Tree() {</br> </p>
-            <p>     System.out.println("Tree created");</br> </p>
-            <p>    super();</br> </p>
-            <p>    }</br> </p>
-            <p>    }</br> </p>
-            <p>     public class Test {</br> </p>
-            <p>     public static void main(String args[]) {</br> </p>
-            <p>     Tree tree = new Tree();</br> </p>
-            <p>    }</br> </p>
-            <p>    }</br> </p>
-
-
-             ]]></Question>
+					What is the expected output? <br>
+					Please choose only one answer: <br>
+					class Plant {<br>
+					Plant() {<br>
+					System.out.println("Plant created");  <br>
+					}<br>
+					}<br>
+					class Tree extends Plant {<br>
+					Tree() {<br>
+					System.out.println("Tree created");<br>
+					super();<br>
+					}<br>
+					}<br>
+					public class Test {<br>
+					public static void main(String args[]) {<br>
+					Tree tree = new Tree();<br>
+					}<br>
+					}<br>
+					]]></Question>
                 <options>
-                    <option><![CDATA[ <p>   Plant created
-                                   </br>Tree created </p> ]]></option>
-                    <option><![CDATA[ <p> Tree created
-                                 </br>Plant created </p> ]]></option>
-                    <option> <![CDATA[<p>     RuntimeException </p> ]]></option>
-                    <option><![CDATA[ <p>  Compilation error  </p> ]]></option>
+                    <option><![CDATA[    Plant created
+                                   <br>Tree created ]]></option>
+                    <option><![CDATA[  Tree created
+                                 <br>Plant created ]]></option>
+                    <option> <![CDATA[     RuntimeException ]]></option>
+                    <option><![CDATA[   Compilation error  ]]></option>
                     <option></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>D</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Explanation>Super must be first Statement in Constructor </Explanation>
             </PraacticeQuestion>
 
-
-
             <PraacticeQuestion>
-                <QuestionNo>5</QuestionNo>
+                <QuestionNo>6</QuestionNo>
                 <Question><![CDATA[
-             <p>      The following code contains one compilation error, where could it be? </br></p>
-             <p>    Please choose only one answer: </br> </p>
-             <p>      public class Tester {</br> </p>
-             <p>      Tester() { } // line 1 </br> </p>
-             <p>      static void Tester() { this(); } // line 2  </br> </p>
-             <p>    public static void main(String[] args) { // line 3</br> </p>
-             <p>    Tester(); // line 4</br> </p>
-            <p>    }</br> </p>
-            <p>    }</br> </p>
-             ]]></Question>
+					What is the expected output? <br>
+					Please choose only one answer: <br>
+					class Plant {<br>
+					Plant() {<br>
+					System.out.println("Plant created");  <br>
+					}<br>
+					}<br>
+					class Tree extends Plant {<br>
+					Tree(String s) {<br>
+					this();
+					System.out.println("Tree created : "+s);<br>
+					<br>
+					}
+					}<br>
+					public class Test {<br>
+					public static void main(String args[]) {<br>
+					Tree tree = new Tree(" Carefully");<br>
+					}<br>
+					}<br>
+					]]></Question>
                 <options>
-                    <option><![CDATA[ <p>At line 1, constructor Tester must be </br>marked public like its class </p> ]]></option>
-                    <option><![CDATA[ <p>At line 2, constructor call "this()" </br>can only be called inside constructors</p> ]]></option>
-                    <option> <![CDATA[<p>At line 3, compilation error, ambiguity problem, compiler can"t determine wether a constructor </p> ]]></option>
-                    <option><![CDATA[ <p>Tester or method Tester is called </p> ]]></option>
+                    <option><![CDATA[    Plant created
+                                   <br>Tree created Carefully]]></option>
+                    <option><![CDATA[  Tree created Carefully
+                                 <br>Plant created ]]></option>
+                    <option> <![CDATA[     RuntimeException ]]></option>
+                    <option><![CDATA[   Compilation error  ]]></option>
                     <option></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>D</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Explanation>Tree() is not defined in Tree class and default constructor will not insert automatically if any other argument constructor is define in Constructor </Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[
+					What is the expected output? <br>
+					Please choose only one answer: <br>
+					class Plant {<br>
+					Plant(String str) {<br>
+					System.out.println("Plant created finally");  <br>
+					}<br>
+					}<br>
+					class Tree extends Plant {<br>
+					Tree() {<br>
+					super();
+					System.out.println("Tree created");<br>
+					}<br>
+					Tree(String s) {<br>
+					this();
+					System.out.println("Tree created : "+s);<br>
+					<br>
+					}
+					}<br>
+					public class Test {<br>
+					public static void main(String args[]) {<br>
+					Tree tree = new Tree(" finally");<br>
+					}<br>
+					}<br>
+					]]></Question>
+                <options>
+                    <option><![CDATA[    Plant created finally
+                                   <br>Tree created]]></option>
+                    <option><![CDATA[  Tree created
+									<br>Plant created ]]></option>
+                    <option> <![CDATA[     RuntimeException ]]></option>
+                    <option><![CDATA[   Compilation error  ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>Plant() is not defined in Plant class and default constructor will not insert automatically if any other argument constructor is define in Constructor </Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[
+					What is the expected output? <br>
+					Please choose only one answer: <br>
+					class Plant {<br>
+					Plant() {<br>
+					System.out.println("Plant created");  <br>
+					}<br>
+					}<br>
+					class Tree extends Plant {<br>
+					Tree() {<br>
+					super();
+					System.out.println("Tree created");<br>
+					}<br>
+					Tree(String s) {<br>
+					System.out.println("Tree created : "+s);<br>
+					<br>
+					}
+					}<br>
+					public class Test {<br>
+					public static void main(String args[]) {<br>
+					Tree tree = new Tree(" finally");<br>
+					}<br>
+					}<br>
+					]]></Question>
+                <options>
+                    <option><![CDATA[    Plant created
+									<br>Tree created finally]]></option>
+                    <option><![CDATA[  Tree created finally
+									<br>Plant created ]]></option>
+                    <option> <![CDATA[     RuntimeException ]]></option>
+                    <option><![CDATA[   Compilation error  ]]></option>
+                    <option></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>Plant() is not defined in Plant class and default constructor will not insert automatically if any other argument constructor is define in Constructor </Explanation>
             </PraacticeQuestion>
 
         </PracticeQuestions>
@@ -432,60 +554,252 @@
         <PracticeQuestions name ="Practice">
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
-                <Question>What is Your Name</Question>
+                <Question><![CDATA[
+				Is the following declaration for interface Bendable <br>correct and free of compilation error?<br>
+				abstract interface Bendable { // line 1 <br>
+				final int x = 2009; // line 3 <br>
+				void method1() ; // line 5 <br>
+				public static class Angle {} // line 6<br>
+				} <br>
+				Please choose only one answer:
+				]]>
+                </Question>
                 <options>
-                    <option> A 1  </option>
-                    <option> B  1</option>
-                    <option> C 1 </option>
-                    <option> D 1 </option>
-                    <option> A  3</option>
+                    <option> <![CDATA[ Yes, this is a correct and free of error declaration  ]]></option>
+                    <option><![CDATA[ No, compilation error at line 1 , <br> abstract should be removed ]]></option>
+                    <option><![CDATA[ No, compilation error at line 3 , <br> x should be declared public final ]]> </option>
+                    <option><![CDATA[ No, compilation error at line 5 , <br>method method1() should be declared public abstract ]]></option>
+                    <option><![CDATA[ No, compilation error at line 6 , <br>can't declare a class inside an interface  ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Explanation>Varibales Declraed in interface are by default public static final and methods are public abstract and we can decalre Inner classes inside Interface</Explanation>
+
             </PraacticeQuestion>
             <PraacticeQuestion>
                 <QuestionNo>2</QuestionNo>
-                <Question>What is Your AGE</Question>
+                <Question><![CDATA[
+				Is the following declaration for interface Bendable <br> correct and free of compilation error?<br>
+				interface Bendable { // line 1 <br>
+				final int x = 2009; // line 3 <br>
+				protected void method1(); // line 5<br>
+				}<br>
+				Please choose only one answer:
+				]]>
+                </Question>
                 <options>
-                    <option> A  2</option>
-                    <option> B  2</option>
-                    <option> C  2</option>
-                    <option> D  2</option>
-                    <option> A  3</option>
+                    <option> <![CDATA[ Yes, this is a correct and free of error declaration  ]]></option>
+                    <option><![CDATA[ No, compilation error at line 1,<br>  Bendable should be declared public abstract ]]></option>
+                    <option><![CDATA[No, compilation error at line 3,<br>  x should be declared public final ]]> </option>
+                    <option><![CDATA[ No, compilation error at line 5 ,<br> method method1() should be declared public abstract ]]></option>
+                    <option><![CDATA[   ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Explanation>only public and default Access Modiefier are allowed with abstarct Methods</Explanation>
 
             </PraacticeQuestion>
             <PraacticeQuestion>
                 <QuestionNo>3</QuestionNo>
-                <Question>What is Your PARTY</Question>
+                <Question><![CDATA[Is the following declaration for interface Bendable <br>correct and free of compilation error?br>
+				abstract interface Bendable { // line 1 <br>
+				final int x = 2009; // line 3 <br>
+				void method1(){}; // line 5 <br>
+				} <br>
+				Please choose only one answer:
+				]]>
+                </Question>
                 <options>
-                    <option> A  3</option>
-                    <option> B  3</option>
-                    <option> C  3</option>
-                    <option> D  3</option>
-                    <option> A  3</option>
+                    <option> <![CDATA[ Yes, this is a correct and free of error declaration ]]></option>
+                    <option><![CDATA[ No, compilation error at line 1]]></option>
+                    <option><![CDATA[No, compilation error at line 3 ]]> </option>
+                    <option><![CDATA[ No, compilation error at line 5 ]]></option>
+                    <option><![CDATA[   ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
-                <Answer>A</Answer>
-                <Explanation>SAHIL</Explanation>
+                <Answer>D</Answer>
+                <Explanation>void method1(){}; specifies Abstarct Methods and Abstract method does not have body </Explanation>
 
             </PraacticeQuestion>
             <PraacticeQuestion>
                 <QuestionNo>4</QuestionNo>
-                <Question>What is Your HAIR</Question>
+                <Question><![CDATA[
+				Will the following code compile correctly?<br>
+				abstract class AirPlane { <br>
+				abstract void fly(); <br>
+				void land() { // line 5 <br>
+				System.out.print("Landing.."); <br>
+				} <br>
+				} <br>
+				class AirJet extends AirPlane { <br>
+				AirJet() { <br>
+				super(); // line 14 <br>
+				} <br>
+				void fly() { <br>
+				System.out.print("Flying.."); <br>
+				} <br>
+				} <br>
+				Please choose only one answer: <br>
+				]]>
+                </Question>
                 <options>
-                    <option> A  4</option>
-                    <option> B  4</option>
-                    <option> C  4</option>
-                    <option> D  4</option>
-                    <option> A  3</option>
+                    <option> <![CDATA[ Yes, it will compile with no errors ]]></option>
+                    <option><![CDATA[ No, because at line 5 method land() must be abstract<br> since class AirPlane is abstract]]></option>
+                    <option><![CDATA[ No, because class AirJet must override method land() ]]> </option>
+                    <option><![CDATA[ No, because at line 14 AirJet constructor is calling the super() while AirPlane has no constructor defined]]></option>
+                    <option><![CDATA[   ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
+                <Explanation><![CDATA[ Abstratc class can contain abstract as well as normal methods <br>
+										land methid us not abstarct so no need to overRide <br>
+										JVM automatically inserts default Constructor if we are not defining any COnstructor.
+										]]></Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[
+				The following code contains a compilation error ,<br> what can be done to fix this error - independently?<br>
+				abstract class AirPlane { <br>
+				abstract void fly(); // line 2 <br>
+				void land() { <br>
+				System.out.print("Landing.."); <br>
+				}<br>
+				}<br>
+				class AirJet extends AirPlane { // line 10 <br>
+				AirJet() { <br>
+				super(); // line 13<br>
+				} <br>
+				void fly() {<br>
+				System.out.print("Flying..");<br>
+				}<br>
+				abstract void land() ; // line 20<br>
+				}<br>
+				Please choose all the answers that apply: <br>
+				]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Remove abstract from line 20 and add body to method land() ]]></option>
+                    <option><![CDATA[ Declare class AirJet as abstract to at line 10]]></option>
+                    <option><![CDATA[ Remove super() call at line 13 ]]> </option>
+                    <option><![CDATA[ Remove abstract at line 1 and line 2]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>abstract method must define in abstract class so to fix eror remove abstract from line 20 </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[ Which of the following is true?<br>
+
+				Please choose all the answers that apply:<br>
+				]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ If a class is declared abstract ,<br> it must contain at least one abstract method ]]></option>
+                    <option><![CDATA[ If a class is declared abstract , all its methods must be abstract]]></option>
+                    <option><![CDATA[ A method can either be final or abstract ]]> </option>
+                    <option><![CDATA[ If a method is abstract then its class must be declared abstract ]]></option>
+                    <option><![CDATA[  An Abstract method has no body and ends with a semicolon ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>CDE</Answer>
+                <Explanation>An Abstract class can contain either zero or more than one abstract methods</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ Which of the following variables is incorrectly declared? <br>
+				public abstract interface Bouncable { <br>
+				int a = 0; <br>
+				public int b = 1; <br>
+				public static int c = 2; <br>
+				public static transient int d = 3; <br>
+				public final int e = 3; <br>
+				public static final int f = 3; <br>
+				} <br>
+				Please choose only one answer: <br>
+				]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ a ]]></option>
+                    <option><![CDATA[ b ]]></option>
+                    <option><![CDATA[ c ]]> </option>
+                    <option><![CDATA[ d ]]></option>
+                    <option><![CDATA[ e  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>Only public static final modifiers are allowed with interface variables</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[ Three of the methods are incorrectly declared, which are they? <br>
+				public abstract class Tester { <br>
+				public void test1(); <br>
+				public final void test2() {}; <br>
+				public static void test3() {}; <br>
+				public abstract static void test4(); <br>
+				public abstract final void test5(); <br>
+				} <br>
+				Please choose only one answer: <br>
+				]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ test1 , test2 and test4 ]]></option>
+                    <option><![CDATA[ test2 , test4 and test5 ]]></option>
+                    <option><![CDATA[ test1 , test4 and test5 ]]> </option>
+                    <option><![CDATA[ ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation><![CDATA[ test1 method is not declared public <br>
+									abstarct and final contradict each other <br>
+									static and final contradict each other	]]></Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[ Which of the following declaration will compile without errors? <br>
+									Please choose all the answers that apply:
+				]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ public abstract class Digit { <br> public abstract void print(); <br>} ]]></option>
+                    <option><![CDATA[ public class Digit { <br> public abstract void print(); <br>} ]]></option>
+                    <option><![CDATA[ public abstract class Digit {<br> public abstract void print(){} <br>} ]]> </option>
+                    <option><![CDATA[ public abstract class Digit { <br>public void print();<br>}]]></option>
+                    <option><![CDATA[ public class Digit { <br> public void print(){}; <br> }  ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>AE</Answer>
+                <Explanation><![CDATA[
+					Abstarct Class can contain both abstract as well as concrete methods <br>
+				]]></Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>10</QuestionNo>
+                <Question><![CDATA[Which of the following is correct about an interface in java? <br>
+								   Please choose all the answers that apply: <br>]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[An Interface can declare data members but must be constants ]]></option>
+                    <option><![CDATA[ All methods in an interface are implicitly abstract ]]></option>
+                    <option><![CDATA[ Methods in an interface may be public, private, protected. ]]> </option>
+                    <option><![CDATA[ An interface can implement an abstract class ]]></option>
+                    <option><![CDATA[ An interface can be final  ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>ABE</Answer>
                 <Explanation>SAHIL</Explanation>
 
             </PraacticeQuestion>
@@ -493,7 +807,7 @@
     </item>
 
     <item>
-        <topicName>4th Topic</topicName>
+        <topicName>Exception</topicName>
         <Description>Description</Description>
         <Examples name="Examples">
             <Example> example 1</Example>
@@ -504,61 +818,2239 @@
         <PracticeQuestions name ="Practice">
             <PraacticeQuestion>
                 <QuestionNo>1</QuestionNo>
-                <Question>What is Your Name</Question>
+                <Question><![CDATA[ What is the expected output?<br>
+									import java.io.IOException;<br>
+									class Father {<br>
+									public Father() throws IOException {<br>
+									System.out.print("Father");<br>
+									throw new IOException();<br>
+									}<br>
+									}<br>
+									class Son extends Father {<br>
+									public Son() throws IOException {<br>
+									System.out.print("Son");<br>
+									}<br>
+									}<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									try {<br>
+									new Son();<br>
+									} catch (IOException e) {<br>
+									System.out.print("Inside catch");<br>
+									}<br>
+									}<br>
+									}	<br>
+									Please choose only one answer:
+									]]>
+                </Question>
                 <options>
-                    <option> A 1  </option>
-                    <option> B  1</option>
-                    <option> C 1 </option>
-                    <option> D 1 </option>
-                    <option> A  3</option>
+                    <option> <![CDATA[Compile error, constructors can't throw Exceptions ]]></option>
+                    <option><![CDATA[FatherSon ]]></option>
+                    <option><![CDATA[FatherInside catch ]]> </option>
+                    <option><![CDATA[Father, then an IOException is thrown ]]></option>
+                    <option><![CDATA[Son  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>Fathers constructors Throw IO Exception ant catch block executed</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ What is the expected output of compiling and running this code? <br>
+									class Father { <br>
+									public Father() throws RuntimeException {<br>
+									System.out.print("Father");<br>
+									throw new RuntimeException();<br>
+									}<br>
+									}<br>
+									class Son extends Father {<br>
+									public Son() throws RuntimeException {<br>
+									System.out.print("Son");<br>
+									}<br>
+									}<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									new Son(); // line 17<br>
+									}<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[Compile error, an import to java.lang.RuntimeException is required ]]></option>
+                    <option><![CDATA[Father will be printed then a RuntimeException would be thrown]]></option>
+                    <option><![CDATA[ Compile error at line 17, new Son() should be within a try/catch block ]]> </option>
+                    <option><![CDATA[Son ]]></option>
+                    <option><![CDATA[ SonFather  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>RunTime Exception is thrown and its not handled with try catch Block</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ What is the expected output of compiling and running the following code? <br>
+									import java.io.IOException; <br>
+									class AirPlane {<br>
+									public AirPlane() throws IOException, RuntimeException {<br>
+									System.out.println("AirPlane");<br>
+									}<br>
+									}<br>
+									class AirJet extends AirPlane { } // line 7<br>
+									public class Tester {<br>
+									public static void main(String args[]) throws IOException { // line 10<br>
+									new AirPlane(); // line 11<br>
+									}}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[AirPlane ]]></option>
+                    <option><![CDATA[Compile error at line 7, AirJet must declare a constructor that throws IOException or any of its supertypes ]]></option>
+                    <option><![CDATA[Compile error at line 10, main() must throw also RuntimeException ]]> </option>
+                    <option><![CDATA[Compile error at line 11 ,new AirPlane() must be within try/catch block ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>AirJet contains default Constructor and it doesn't throw IO Exceptiona dn Runtime Exception</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question><![CDATA[ What is the expected output? <br>
+									interface Foldable {<br>
+									public void fold() throws Exception ;<br>
+									}<br>
+									class Paper implements Foldable {<br>
+									public void fold() { // line 6<br>
+									System.out.print("Fold");<br>
+									}<br>
+									}<br>
+									public class Tester {<br>
+									public static void main(String args []) {<br>
+									Foldable obj1 = new Paper();<br>
+									obj1.fold(); // line 8<br>
+									Paper obj2 = new Paper(); // line 10<br>
+									obj2.fold();<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ FoldFold ]]></option>
+                    <option><![CDATA[ Compilation error at line 6, fold() must declare at header throws Exception ]]></option>
+                    <option><![CDATA[ Compilation error at line 8, unhandled exception ]]> </option>
+                    <option><![CDATA[ RuntimeException at line 8 ]]></option>
+                    <option><![CDATA[ Compilation error at line 10, unhandled exception  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>fold Method throws Compile TIme Exception and its not handled, We must handled Compile Time Exception</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									System.out.print("1");<br>
+									try {<br>
+									System.out.print("2");<br>
+									System.exit(0);<br>
+									} finally {<br>
+									System.out.print("3");<br>
+									}<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ 123 ]]></option>
+                    <option><![CDATA[12 ]]></option>
+                    <option><![CDATA[ Compilation error , there should be at least one catch before finally ]]> </option>
+                    <option><![CDATA[ ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>System.exit(0); terminates the JVM and finally block will not get Execute</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester { <br>
+									public static void main(String[] args) { <br>
+									System.out.print("1"); <br>
+									try { <br>
+									return; <br>
+									} catch (Exception e) { <br>
+									System.out.print("2"); <br>
+									} finally { <br>
+									System.out.print("3"); <br>
+									} <br>
+									System.out.print("4"); <br>
+									} <br>
+									}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 1234 ]]></option>
+                    <option><![CDATA[13 ]]></option>
+                    <option><![CDATA[ 1 ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>In Try Catch Block, Before return statement finally block got execute</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following program? <br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									try {<br>
+									throw new RuntimeException();<br>
+									} catch (RuntimeException e) {<br>
+									System.out.println("RuntimeException");<br>
+									} catch (ArithmeticException e) {<br>
+									System.out.println("ArithmeticException");<br>
+									} catch (Exception e) {<br>
+									System.out.println("Exception");<br>
+									}<br>
+									}<br>
+									}	<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ "RuntimeException" is printed ]]></option>
+                    <option><![CDATA[ "Exception" is printed ]]></option>
+                    <option><![CDATA[ "ArithmeticException" is printed  ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>Exception must be catch from child to Super class Exception</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester { <br>
+									static void method() throws Exception { <br>
+									throw new Exception(); <br>
+									} <br>
+									public static void main(String[] args) { <br>
+									try { <br>
+									method(); <br>
+									} catch (Throwable e) { <br>
+									try { <br>
+									throw new Exception() ; <br>
+									} catch (Exception ex) { <br>
+									System.out.print("exception"); <br>
+									} finally { <br>
+									System.out.print("finally"); <br>
+									} <br>
+									} <br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ "exception" is printed ]]></option>
+                    <option><![CDATA[ "finally" is printed]]></option>
+                    <option><![CDATA[ "exceptionfinally" is printed ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>when you call main method, it'll come to try block and execute method method(), which throw a exception (here it is not catching the exception just throwing the exception) and so, it goes to catch block in main method and which contains try catch block and goes to try block in which exception created and throwed, so again it goes to catch block and prints "exception" and finally goes to finally block as always finally is followed by after try catch block which prints "finally". so Answers is "exceptionfinally"  </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[In which case a NoClassDefFoundError will be thrown? <br>
+								   Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ When try to compile a non found java file ]]></option>
+                    <option><![CDATA[When try to run a non found java .class file]]></option>
+                    <option><![CDATA[ When try to compile a non found java file or ]]> </option>
+                    <option><![CDATA[ try to run a non found java .class file ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>When try to run a non found java .class file</Explanation>
+
+            </PraacticeQuestion>
+            <PraacticeQuestion>
+                <QuestionNo>10</QuestionNo>
+                <Question><![CDATA[ What is the output of the following code <br>
+									Please choose only one answer:<br>
+
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									Double d = -4.0;<br>
+									try {<br>
+									d /= 0;<br>
+									} catch (ArithmeticException e) {<br>
+									System.out.println("EXCEPTION!");<br>
+									} finally {<br>
+									System.out.println(d);<br>
+									}<br>
+									}<br>
+									}<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[NaN]]></option>
+                    <option><![CDATA[EXCEPTION! -4.0]]></option>
+                    <option><![CDATA[ -Infinity ]]> </option>
+                    <option><![CDATA[ EXCEPTION! 0.0 ]]></option>
+                    <option><![CDATA[ Compilation fails  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>when a double variable is devide by zero then it return Double.POSITIVE_INFINITY for positive and Double.NEGATIVE_INFINITY for negative Variables</Explanation>
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+    <item>
+        <topicName>Arrays</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public static void main(String[] args) {<br>
+									int[] a = new int[0];<br>
+									System.out.print(a.length);<br>
+									}<br>]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ 0 ]]></option>
+                    <option><![CDATA[ Compilation error, arrays cannot be initialized to zero size ]]></option>
+                    <option><![CDATA[ Compilation error, it is a.length() not a.length ]]> </option>
+                    <option><![CDATA[  ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>Given Syntax is Correct int[] a= new int[0];</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Hello {<br>
+									static void test(int[] a) {<br>
+									int[] b = new int[2];<br>
+									a = b;<br>
+									System.out.print(b.length);<br>
+									System.out.print(a.length);<br>
+									}<br>
+									public static void main(String[] args) {<br>
+									int[] a = new int[5];<br>
+									test(a);<br>
+									System.out.print(a.length);<br>
+									}<br>
+									}	<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[222]]></option>
+                    <option><![CDATA[255]]></option>
+                    <option><![CDATA[200 ]]> </option>
+                    <option><![CDATA[225 ]]></option>
+                    <option><![CDATA[ ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>int[a] is local to test class</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ What is true after running the following code? <br>
+									public static void main(String[] args) {<br>
+									String entries[] = {"entry1","entry2"};<br>
+									int count=0;<br>
+									while (entries [count++]!=null){<br>
+									System.out.println(count);<br>
+									}<br>
+									System.out.println(count);<br>
+									}<br>
+									Please choose all the answers that apply: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[An Exception will be thrown ]]></option>
+                    <option><![CDATA[ 0 will be printed as part of the output]]></option>
+                    <option><![CDATA[ 2 will be printed as part of the output ]]> </option>
+                    <option><![CDATA[ 3 will be printed as part of the output ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>IndexOutOfBounds Exception will be thrown at runtime brcause entries[count++] will try to access index 2 which doesn't exists</Explanation>
+
+            </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question><![CDATA[ Which of the following declarations of an array is incorrect?<br>
+									public static void main(String[] args) { <br>
+									int[] a[];<br>
+									int b[3];<br>
+									int []c[];<br>
+									int[] d[];<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ a ]]></option>
+                    <option><![CDATA[ b ]]></option>
+                    <option><![CDATA[ c ]]> </option>
+                    <option><![CDATA[ d ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>int b[3]; should not be declared like this. int b[] value we must provide on R.H.S</Explanation>
+
+            </PraacticeQuestion>
+
+
+
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following program?<br>
+									public class Hello {<br>
+									final static int x[] = new int[5];<br>
+									public static void main(String[] args) {<br>
+									final int x = new Hello().x[5];<br>
+									if (x <= 10)<br>
+									System.out.println("Hello");<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[ArrayIndexOutOfBoundsException is thrown ]]></option>
+                    <option><![CDATA[ javachamp ]]> </option>
+                    <option><![CDATA[ No output is produced ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>ArrayIndexOutOfBoundsException Exception will be thrown at runtime brcause new Hello().x[5] will try to access index 5 which doesn't exists</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[ What is the result?<br>
+									public static void main(String[] args) { <br>
+									Object obj = new int[] { 1, 2, 3 }; // line 12<br>
+									int[] someArray = (int[])obj; // line 13<br>
+									for (int i : someArray) System.out.print(i + " "); // line 14<br>
+									}	<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 1 2 3 ]]></option>
+                    <option><![CDATA[ Compilation fails because of an error in line 12. ]]></option>
+                    <option><![CDATA[ Compilation fails because of an error in line 13.  ]]> </option>
+                    <option><![CDATA[ Compilation fails because of an error in line 14. ]]></option>
+                    <option><![CDATA[  A ClassCastException is thrown at runtime. ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation><![CDATA[ new int[]{1,2,3} declares a refrence variable of array containing 1, 2, 3 <br>
+						obj contains refernce of int[] and downcasting also to int[] so no class cast exception or compile time error
+				]]>
+                </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester { <br>
+									static void method() throws Exception { <br>
+									throw new Exception(); <br>
+									} <br>
+									public static void main(String[] args) { <br>
+									try { <br>
+									method(); <br>
+									} catch (Throwable e) { <br>
+									try { <br>
+									throw new Exception() ; <br>
+									} catch (Exception ex) { <br>
+									System.out.print("exception"); <br>
+									} finally { <br>
+									System.out.print("finally"); <br>
+									} <br>
+									} <br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ "exception" is printed ]]></option>
+                    <option><![CDATA[ "finally" is printed]]></option>
+                    <option><![CDATA[ "exceptionfinally" is printed ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>method() throws Exception i.e caught by catch(Throwable), Which agains throws exception caught by catch block will pring "exception" then finally block prints "finally" So Answer is exceptionfinally </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[ What is the result of running the following code with "java Test debug":<br>
+									class Test<br>
+									{<br>
+									public static void main(String [ ] args)<br>
+									{<br>
+									if (args.length == 1 | args[1].equals("debug"))<br>
+									{<br>
+									System.out.println(args[0]);<br>
+									}<br>
+									else<br>
+									{<br>
+									System.out.println("Release");<br>
+									}<br>
+									}<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Debug ]]></option>
+                    <option><![CDATA[Release]]></option>
+                    <option><![CDATA[ Compilation fails ]]> </option>
+                    <option><![CDATA[ An exception is thrown at run-time ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>debug is an argument to test class, args length is 1 but args[1] will result as ArrayIndexOutOfBoundsException only element is args[0]='debug' </Explanation>
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+    <item>
+        <topicName>Operators</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+
+
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+								public class Tester {<br>
+								static int i ;<br>
+								private static int increment(int i) {<br>
+								return i++;<br>
+								}<br>
+								public Tester() {<br>
+								i = 1;<br>
+								}<br>
+								public static void main(String[] args) {<br>
+								System.out.print(i);<br>
+								System.out.print(i = increment(i));<br>
+								}<br>
+								}<br>
+								]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 01 ]]></option>
+                    <option><![CDATA[ 00 ]]></option>
+                    <option><![CDATA[ 12 ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>default value of static variable i is 0 and increment method return postfix increment of i results as 0 then increment so Answer is 00</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public static void main(String[] args) { <br>
+									byte b1= 25;<br>
+									byte b2= 45;<br>
+									byte b3= b1+b2;<br>
+									}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 70 ]]></option>
+                    <option><![CDATA[CompileError ]]></option>
+                    <option><![CDATA[ 25 ]]> </option>
+                    <option><![CDATA[ RunTimeException ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>Output of Arithmetic oprator must be int byte b3 is wrong it should be int b3 or we can typecast
+                    it byte b3= (byte)(b1+b2);</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester { <br>
+									static boolean isEven(int x) { <br>
+									return (x % 2 == 0) ? true : false; <br>
+									} <br>
+									public static void main(String[] args) { <br>
+									System.out.print(isEven(2)); <br>
+									System.out.print(isEven(3)); <br>
+									System.out.print(isEven(4)); <br>
+									} <br>
+									}	<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option><![CDATA[truefalsetrue ]]></option>
+                    <option><![CDATA[falsefalsetrue]]></option>
+                    <option><![CDATA[falsefalsefalse]]> </option>
+                    <option><![CDATA[a compilation error ]]></option>
+                    <option><![CDATA[an exception is thrown at run time]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>ternary Operator checks first expression if its true then retrun true otherwise false</Explanation>
+
+            </PraacticeQuestion>
+
+
+            Please choose only one answer:
+
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									int x = 0;<br>
+									int i = 1;<br>
+									for (; i > 0; i--)<br>
+									if ((++x > 0) | (--i > 0))<br>
+									x++;<br>
+									System.out.println(x + "" + i);<br>
+									}<br>
+									}<br>
+									Please choose all the answers that apply: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[ 21]]></option>
+                    <option><![CDATA[ 20 ]]> </option>
+                    <option><![CDATA[ 2-1 ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>x increment to 2 after if statement then ans i got decrement by -2 result as 2-1</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									int x = 0;<br>
+									int y = 0;<br>
+									if ((true & false) | (true & false) & x++>0)<br>
+									System.out.print("stmt1 ");<br>
+									if (false || true | (++y> 0 | y++>0))<br>
+									System.out.print("stmt2 ");<br>
+									System.out.print(x+" "+y);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ stmt1 stmt2 1 2 ]]></option>
+                    <option><![CDATA[ stmt1 stmt2 0 0 ]]></option>
+                    <option><![CDATA[ stmt2 1 2 ]]> </option>
+                    <option><![CDATA[ stmt2 0 2 ]]></option>
+                    <option><![CDATA[ 0 0 ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation> || operator check  statement if its false only then check for second statement opposite to this | operator checks only all conditions irrespective of first or second addition So After first if statement x = 1 and y=0 and after second if statement x=1 and y=2
+                </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[
+									What is the result of compiling and running the following code? <br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									System.out.print("" + 7 + 2 + " ");<br>
+									System.out.print(7 + 2 + " ");<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 9 9 ]]></option>
+                    <option><![CDATA[72 9 ]]></option>
+                    <option><![CDATA[ 9 72 ]]> </option>
+                    <option><![CDATA[ 72 72 ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>+ oprator behaves as per the type of first operand if First operand is String then + operator behave as String concat or if first operand is integer then it behave as Arithmetic operator first SOP statement result as String Concatenationas ""+7 (String+int+)=StringConcatenate Second String int+int=int+String=String</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									boolean flag = true;<br>
+									int x = 5;<br>
+									int result = (8 * 2) % x;<br>
+									System.out.print(!(result > 0) ^ true ^ (flag = false));<br>
+									System.out.print(flag);<br>
+									}<br>
+									}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ truefalse ]]></option>
+                    <option><![CDATA[ truetrue ]]></option>
+                    <option><![CDATA[ falsefalse ]]> </option>
+                    <option><![CDATA[ falsetrue ]]></option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>result = 1 then ^ is bitwise Exclusive OR </Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ What is the result?<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									boolean flag = true;<br>
+									int x = 5;<br>
+									int result = (8 * 2) % x;<br>
+									System.out.print(!(result > 0) ^ true ^ !(flag = false));<br>
+									System.out.print(flag);<br>
+									}	<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[truefalse ]]></option>
+                    <option><![CDATA[ truetrue ]]></option>
+                    <option><![CDATA[ falsefalse  ]]> </option>
+                    <option><![CDATA[falsetrue]]></option>
+                    <option><![CDATA[  Compilation error ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
             </PraacticeQuestion>
+
+
+
             <PraacticeQuestion>
-                <QuestionNo>2</QuestionNo>
-                <Question>What is Your AGE</Question>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[  What is the result of compiling and running the following code? <br>
+									public class Test{ <br>
+									public static void main(String argv[]) { <br>
+									Foo x = new Foo(); <br>
+									Foo y = new Foo(); <br>
+									Foo z = x; <br>
+									System.out.print(x == y); <br>
+									System.out.print(x == z); <br>
+									} <br>
+									} <br>
+									class Foo {}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
                 <options>
-                    <option> A  2</option>
-                    <option> B  2</option>
-                    <option> C  2</option>
-                    <option> D  2</option>
-                    <option> A  3</option>
+                    <option> <![CDATA[ falsetrue ]]></option>
+                    <option><![CDATA[ falsefalse ]]></option>
+                    <option><![CDATA[ truetrue ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
 
             </PraacticeQuestion>
+
+
             <PraacticeQuestion>
-                <QuestionNo>3</QuestionNo>
-                <Question>What is Your PARTY</Question>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+								public class Test{<br>
+								public static void main(String argv[]) {<br>
+								int a = 6;<br>
+								if (a = 6)<br>
+								System.out.print("true");<br>
+								}<br>
+								}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
                 <options>
-                    <option> A  3</option>
-                    <option> B  3</option>
-                    <option> C  3</option>
-                    <option> C  3</option>
-                    <option> D  3</option>
+                    <option> <![CDATA[ no output is produced ]]></option>
+                    <option><![CDATA[true]]></option>
+                    <option><![CDATA[ a compilation error ]]> </option>
+                    <option><![CDATA[ ]]></option>
+                    <option><![CDATA[   ]]></option>
                 </options>
-                <TypeofQuestion></TypeofQuestion>
+                <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
+
             </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>10</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+								public static void main(String[] args) {<br>
+								System.out.print("4" + 5);<br>
+								System.out.print(4 + 5);<br>
+								System.out.print(4 + 5 + "9");<br>
+								}<br>
+								Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 4545459 ]]></option>
+                    <option><![CDATA[459459]]></option>
+                    <option><![CDATA[ 45999 ]]> </option>
+                    <option><![CDATA[ ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>11</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+								public static void main(String[] args) {<br>
+								int x = 1, y = 0;<br>
+								if ((y == x++) && (x < ++y)) { }<br>
+								System.out.println(x + "" + y);<br>
+								}<br>
+								<br>
+								Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 20 ]]></option>
+                    <option><![CDATA[21]]></option>
+                    <option><![CDATA[ 10 ]]> </option>
+                    <option><![CDATA[ 11 ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+    <item>
+        <topicName>Variables and Methods</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+
+
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public static void main(String[] args) {<br>
+									int x = 5, y;<br>
+									while (++x < 7) {<br>
+									y = 2;<br>
+									}<br>
+									System.out.println(x + y);<br>
+									}<br>
+								]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ 7 ]]></option>
+                    <option><![CDATA[ 8 ]]></option>
+                    <option><![CDATA[ 9 ]]> </option>
+                    <option><![CDATA[ a Compilation error ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>y is local variable it must be initialized before using and while loop is not compulsory to execute </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester { <br>
+									public static void main(String args) {<br>
+									System.out.println("Test");<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[The program will compile and run fine printing Test as output ]]></option>
+                    <option><![CDATA[ The program will compile fine but won't run correctly, Error: could not load main class]]></option>
+                    <option><![CDATA[ There is a compilation error at declaring the main() argument, should be an array of String instead]]> </option>
+                    <option><![CDATA[ ]]></option>
+                    <option><![CDATA[ ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>This program copiles fine but as main method signature is not correct so couldn't able to load main class</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+									public class Tester {<br>
+									static {<br>
+									int x = 3;<br>
+									}<br>
+									static int x;<br>
+									public static void main(String[] args) {<br>
+									x--; // line 7<br>
+									System.out.println(x);<br>
+									}<br>
+									}<br>
+									Please choose all the answers that apply: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 3]]></option>
+                    <option><![CDATA[ 2]]></option>
+                    <option><![CDATA[ -1 ]]> </option>
+                    <option><![CDATA[ Compilation error at line 7, x is not initialized ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>int x=3; is local to static block and default value of x is 0 so x-- leads to -1</Explanation>
+
+            </PraacticeQuestion>
+
             <PraacticeQuestion>
                 <QuestionNo>4</QuestionNo>
-                <Question>What is Your HAIR</Question>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									int x = 1;<br>
+									int y;<br>
+									while(++x<5) y++;<br>
+									System.out.println(y);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
                 <options>
-                    <option> A  4</option>
-                    <option> B  4</option>
-                    <option> C  4</option>
-                    <option> D  4</option>
-                    <option> C  3</option>
+                    <option> <![CDATA[ 0]]></option>
+                    <option><![CDATA[ 3]]></option>
+                    <option><![CDATA[ 4 ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>local variable y is not initialized</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[What is the result of compiling and running the following code? <br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									int x = 1;<br>
+									int y=0;<br>
+									while(++x<5) y++;<br>
+									System.out.println(y);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 0]]></option>
+                    <option><![CDATA[ 3]]></option>
+                    <option><![CDATA[ 4 ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>Local variable y is initialized so leads to y=3</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[ Which of the following is a valid variable declaration? <br>
+									Please choose all the answers that apply: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ int _javaChamp; ]]></option>
+                    <option><![CDATA[int _;%javaChamp; ]]></option>
+                    <option><![CDATA[ int ;javaChamp; ]]> </option>
+                    <option><![CDATA[ int 2009JavaChamp; ]]></option>
+                    <option><![CDATA[  int $JavaChamp; ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>AE</Answer>
+                <Explanation>Variable should not contain special chracter other than _ and $, variable can not start with no or ;</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ Which of the following methods follow the JavaBean standards? <br>
+								Please choose all the answers that apply:<br>
+									]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ public void addJCListener(JCListener listener) ]]></option>
+                    <option><![CDATA[ void setName(String name) ]]></option>
+                    <option><![CDATA[ public void removeJCListener(MCListener listener)  ]]> </option>
+                    <option><![CDATA[ public boolean isDeleted()]]></option>
+                    <option><![CDATA[ public void fetchName(String name) ]]></option>
+                </options>
+                <TypeofQuestion>Multiple </TypeofQuestion>
+                <Answer>AD</Answer>
+                <Explanation>A and D follows Java Bean Standard</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[  What is the result of compiling and running the following code? <br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									if(true){<br>
+									int x = 5;<br>
+									System.out.print(x);<br>
+									} else {<br>
+									++x;<br>
+									System.out.print(x);<br>
+									}<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 5 ]]></option>
+                    <option><![CDATA[ 56 ]]></option>
+                    <option><![CDATA[ 6 ]]> </option>
+                    <option><![CDATA[ Compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>x don't have scope in else block</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+								public class Tester {<br>
+								int x = 12;<br>
+								static void reset(Tester obj) {<br>
+								obj = null;<br>
+								}<br>
+								public static void main(String[] args) {<br>
+								Tester o1 = new Tester();<br>
+								reset(o1);<br>
+								System.out.print(o1.x);<br>
+								}<br>
+								}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 0 ]]></option>
+                    <option><![CDATA[ 12 ]]></option>
+                    <option><![CDATA[ compilation error ]]> </option>
+                    <option><![CDATA[ NullPointerException is thrown]]></option>
+                    <option><![CDATA[  Another type of exception is thrown ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>B</Answer>
+                <Explanation>JAVA is pass by value so when o1 is passed the obj is assigned with same value but when obj=null; then reference variable obj is assigned to null but o1 still refers to old object that's why prints 12  </Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>10</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+								public class Tester {<br>
+								final short s = 12; // Line 3<br>
+								static void swap( Tester obj) {<br>
+								obj.s = 11; // Line 6<br>
+								}<br>
+								public static void main(String[] args) {<br>
+								final Tester obj1 = new Tester();<br>
+								swap(obj1);<br>
+								System.out.print(obj1.s); // Line 12<br>
+								}<br>
+								}<br>
+								Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 11 ]]></option>
+                    <option><![CDATA[12]]></option>
+                    <option><![CDATA[ Compilation error at line 3 ]]> </option>
+                    <option><![CDATA[Compilation error at line 6]]></option>
+                    <option><![CDATA[ Compilation error at line 12  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>D</Answer>
+                <Explanation>The final field question10.s cannot be assigned with 11, we can not change the value of final variable</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>11</QuestionNo>
+                <Question><![CDATA[ What is the output for following program?<br>
+								public class SomeClass {<br>
+								static int i ;<br>
+								private static int increment(int i) {<br>
+								return ++i;<br>
+								}<br>
+								public SomeClass() {<br>
+								i = 1;<br>
+								}<br>
+								public static void main(String[] args) {<br>
+								System.out.print(i);<br>
+								System.out.print( increment(i));<br>
+								System.out.print(i);<br>
+								}<br>
+								}<br>
+								Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 000 ]]></option>
+                    <option><![CDATA[012]]></option>
+                    <option><![CDATA[ 010 ]]> </option>
+                    <option><![CDATA[ compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>C</Answer>
+                <Explanation>[010]first static valriable default value i =0 then increment method increment value of internal local variable value by 1 then staic variable i is still 0</Explanation>
+
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+
+    <item>
+        <topicName>Inheritance</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[ Are the following declarations correct, <br> if you knew that they are in the same package?<br>
+									interface Bouncable{ } // line 1<br>
+									interface Colorable extends Bouncable{ } // line 2<br>
+									class Super implements Colorable{ } // line 3<br>
+									class Sub implements Colorable extends Super { } // line 4 <br>
+									Please choose only one answer: <br>
+								]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Yes, the declarations are correct ]]></option>
+                    <option><![CDATA[ No there is a compilation error at line 2, must implements not extends ]]></option>
+                    <option><![CDATA[ No there is a compilation error at line 4, over implementing for interface Colorable, Super is already implementing it]]> </option>
+                    <option><![CDATA[ No there is a compilation error at line 4, extends should come before implements ]]></option>
+                    <option><![CDATA[  ]]></option>
                 </options>
                 <TypeofQuestion>Single</TypeofQuestion>
                 <Answer>A</Answer>
                 <Explanation>SAHIL</Explanation>
             </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ 	Which of the following is true? <br>
+										Please choose all the answers that apply:<br>
+							]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ A class can extend more than one class ]]></option>
+                    <option><![CDATA[ A class can extend only one class but many interfaces ]]></option>
+                    <option><![CDATA[ An interface can extend many interfaces]]> </option>
+                    <option><![CDATA[ An interface can implement many interface ]]></option>
+                    <option><![CDATA[ A class can extend one class and implement many interfaces ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ Which lines will evaluate to true? <br>
+									interface Colorable { }<br>
+									interface Bouncable extends Colorable { }<br>
+									class Super implements Bouncable { }<br>
+									class Sub extends Super implements Bouncable { }<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									System.out.println(new Sub() instanceof Super); //line 1<br>
+									System.out.println(new Sub() instanceof Bouncable);//line 2<br>
+									System.out.println(new Sub() instanceof Colorable);//line 3<br>
+									System.out.println(new Super() instanceof Sub);//line 4<br>
+									System.out.println(new Super() instanceof Colorable);//line 5<br>
+									}<br>
+									}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ All lines will evaluate to true ]]></option>
+                    <option><![CDATA[  All lines will evaluate to true and only line 4 will evaluate to false ]]></option>
+                    <option><![CDATA[ Only line 1 and 2 will evaluate to true ]]> </option>
+                    <option><![CDATA[ Lines 3 and 5 will evaluate to false ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question><![CDATA[ what is the result of compiling and running the following code? <br>
+									interface Colorable { }<br>
+									interface Bouncable extends Colorable { }<br>
+									class Super implements Bouncable { }<br>
+									class Sub extends Super implements Bouncable { }<br>
+									class Individual { }<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									System.out.print(new Sub() instanceof Super);<br>
+									System.out.print(new Sub() instanceof Colorable);<br>
+									System.out.print(new Super() instanceof Sub);<br>
+									System.out.print(new Individual() instanceof Super);<br>
+									}<br>
+									}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ truetruefalsefalse ]]></option>
+                    <option><![CDATA[  truefalsefalsefalse ]]></option>
+                    <option><![CDATA[  Compilation error ]]> </option>
+                    <option><![CDATA[  RuntimeException becaue of the print statement ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[ Will the following code compile and if yes , what is the output?<br>
+									interface Colorable {}<br>
+									class Vehicle {}<br>
+									class Car extends Vehicle implements Colorable {}<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									Vehicle a = new Car();<br>
+									Colorable i = (Colorable) a;<br>
+									Vehicle b = new Vehicle();<br>
+									Colorable j = (Colorable) b;<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ The code compiles fine and produces no output ]]></option>
+                    <option><![CDATA[ The code compiles fine but throws a RuntimeException because of the second casting ]]></option>
+                    <option><![CDATA[ There is a compilation error because of the second casting ]]> </option>
+                    <option><![CDATA[ The code compiles fine but throws a RuntimeException because of the first casting ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[ Would the following code compile and if yes , what is the output? <br>
+									interface Colorable {}<br>
+									class Vehicle {}<br>
+									class Car extends Vehicle implements Colorable {}<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									Vehicle a = new Car();<br>
+									Colorable i = (Colorable) a;<br>
+									Vehicle b = new Vehicle();<br>
+									Colorable j = (Colorable) b;<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ The code compiles fine and produces no output ]]></option>
+                    <option><![CDATA[ The code compiles fine but throws a RuntimeException because of the second casting ]]></option>
+                    <option><![CDATA[ There is a compilation error because of the second casting ]]> </option>
+                    <option><![CDATA[ ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ Which of the following statements are correct?<br>
+								Please choose all the answers that apply:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[A class can extend one class and many interfaces ]]></option>
+                    <option><![CDATA[ A class can implement one class and many interfaces ]]></option>
+                    <option><![CDATA[ A class can extend one class and implements many interfaces  ]]> </option>
+                    <option><![CDATA[An interface can extend many classes and interfaces]]></option>
+                    <option><![CDATA[  An interface can implement many classes and interfaces]]></option>
+                </options>
+                <TypeofQuestion>Multiple </TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[  What is the result of compiling and running the following code?<br>
+									class Base {<br>
+									public void Base() {System.out.print("Base");}<br>
+									}<br>
+									public class Derived extends Base {<br>
+									public Derived() {System.out.print("Derived");}<br>
+									public static void main(String[] args) {<br>
+									new Derived();<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ BaseDerived ]]></option>
+                    <option><![CDATA[ DerivedBase ]]></option>
+                    <option><![CDATA[ Derived ]]> </option>
+                    <option><![CDATA[ Base  ]]></option>
+                    <option><![CDATA[  Compilation error ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code?<br>
+									class Base {<br>
+									public Base(String n){<br>
+									System.out.print("Base1");<br>
+									}<br>
+									public void Base(String n) {<br>
+									System.out.print("Base2");
+									}<br>
+									}<br>
+									public class Derived extends Base {<br>
+									public Derived() {<br>
+									System.out.print("Derived");}<br>
+									public static void main(String[] args) {<br>
+									new Derived();<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Base1Derived ]]></option>
+                    <option><![CDATA[ Base2Derived ]]></option>
+                    <option><![CDATA[ Derived ]]> </option>
+                    <option><![CDATA[  Compilation error ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>10</QuestionNo>
+                <Question><![CDATA[ Which statement(s), inserted independently <br> at // insert code here, will compile? <br>
+								class Creature { <br>
+								String getName() { <br>
+								return "Creature"; <br>
+								} <br>
+								} <br>
+								class Bird extends Creature { <br>
+								String getName() { <br>
+								return "Bird"; <br>
+								} <br>
+								} <br>
+								class Falcon extends Bird { <br>
+								String getName() { <br>
+								return "Falcon"; <br>
+								} <br>
+								} <br>
+								public class Tester { <br>
+								public static Bird getIt(Creature c) { <br>
+								System.out.println(c.getName()); <br>
+								return (Bird) c; <br>
+								} <br>
+								public static void main(String[] args) { <br>
+								// insert code here <br>
+								} <br>
+								}<br>
+								Please choose all the answers that apply: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ getIt(new Creature()); ]]></option>
+                    <option><![CDATA[ getIt(new Bird()); ]]></option>
+                    <option><![CDATA[ getIt(new Falcon()); ]]> </option>
+                    <option><![CDATA[ getIt(new Object());]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>11</QuestionNo>
+                <Question><![CDATA[ considering AnyClassOrInterface is a class or an interface in java<br>
+									what would the following statement print? <br>
+								System.out.print(null instanceof AnyClassOrInterface ); <br>
+								Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ true ]]></option>
+                    <option><![CDATA[false]]></option>
+                    <option><![CDATA[ compilation error ]]> </option>
+                    <option><![CDATA[ NullPointerException is thrown at runtime ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
         </PracticeQuestions>
     </item>
+
+
+
+
+    <item>
+        <topicName>Wrappers and Autoboxing Questions</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[ Which, inserted independently at // <br> insert code here , will compile? (choose four )<br>
+									public class Tester {<br>
+									// insert code here<br>
+									public static void main(String[] args) {<br>
+									calculate(12);<br>
+									}<br>
+									}<br>
+									Please choose all the answers that apply: <br>
+								]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ static void calculate(Double i) {} ]]></option>
+                    <option><![CDATA[ static void calculate(Integer i) {} ]]></option>
+                    <option><![CDATA[ static void calculate(int i) {} ]]> </option>
+                    <option><![CDATA[ static void calculate(int... i) {} ]]></option>
+                    <option><![CDATA[  static void calculate(Integer... i) { } ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ Given that Long and Integer extend Number, <br> what is the result of compiling and running the following code?  <br>
+									Please choose only one answer:<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									Number x = 12; // Line 5<br>
+									Number y = (Long) x; // Line 6<br>
+									System.out.print(x+""+y); // Line 7<br>
+									}<br>
+									}<br>
+							]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 1212 ]]></option>
+                    <option><![CDATA[ Compilation error at line 5 ]]></option>
+                    <option><![CDATA[ Compilation error at line 6 ]]> </option>
+                    <option><![CDATA[ Compilation error at line 7 ]]></option>
+                    <option><![CDATA[ An exception is thrown at run time ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ Given the following code fragment, <br> what is true about the following System.out statements?<br>
+									public class Tester {<br>
+									public static void main(String[] args) {<br>
+									Integer[][] arr1 = { { 1, 2 }, { 3, 4 } };<br>
+									Number[] arr2 = arr1[0];<br>
+									int x = 1;<br>
+									System.out.print(arr1[0][0] == 1);<br>
+									System.out.print(arr2[0] == x);<br>
+									System.out.print(x instanceof Integer);<br>
+									System.out.print(arr1[1][0] > (Integer) arr2[0]);<br>
+									}<br>
+									}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ All statements will compile ]]></option>
+                    <option><![CDATA[  Only one will compile and will print true ]]></option>
+                    <option><![CDATA[ Only two statements will compile and both will print ture ]]> </option>
+                    <option><![CDATA[ Only three statements will compile, only two of them will print true ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question><![CDATA[ 	what will be the output when attempt to compile and execute this code:<br>
+									class Test{<br>
+									public static void main(String arg[])<br>
+									{<br>
+									Number n=10;<br>
+									int i=10;<br>
+									System.out.println(n==i);<br>
+									}}<br>
+									Please choose only one answer: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ true ]]></option>
+                    <option><![CDATA[  false ]]></option>
+                    <option><![CDATA[  compile time error ]]> </option>
+                    <option><![CDATA[  run time exception ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[ What is the output ?<br>
+									class BoxVar{<br>
+									static void call(Integer... i){<br>
+									System.out.println("hi"+i);<br>
+									}<br>
+									static void call(int... i ){<br>
+									System.out.println("hello"+i);<br>
+									}<br>
+									public static void main(String... args){<br>
+									call(10);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ compilation fails ]]></option>
+                    <option><![CDATA[10]]></option>
+                    <option><![CDATA[  ]]> </option>
+                    <option><![CDATA[  ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following program?<br>
+									class ExamDemo2{<br>
+									static Byte b;<br>
+									public static void main(String [] args){<br>
+									b=10;<br>
+									b+=10;<br>
+									System.out.println(b);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Compilation Fails ]]></option>
+                    <option><![CDATA[ 20]]></option>
+                    <option><![CDATA[ Run Time Error ]]> </option>
+                    <option><![CDATA[ ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ What is the correct output?<br>
+									class Test {<br>
+									static void go(int z){<br>
+									System.out.println("int");<br>
+									}<br>
+									static void go(Object z){<br>
+									System.out.println("Object");<br>
+									}<br>
+									static void go(Double z){<br>
+									System.out.println("Double");<br>
+									}<br>
+									static void go(Number z){<br>
+									System.out.println("Number");<br>
+									}<br>
+									public static void main(String... args) {<br>
+									Integer i = 6;<br>
+									go(i);<br>
+									}<br>
+									}<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA["Number"]]></option>
+                    <option><![CDATA[ "Double" ]]></option>
+                    <option><![CDATA["Object"]]> </option>
+                    <option><![CDATA["int"]]></option>
+                    <option><![CDATA[ ]]></option>
+                </options>
+                <TypeofQuestion>Multiple </TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+
+
+    <item>
+        <topicName> Garbage Collection </topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[How many objects are eligible for garbage collection after executing line 7?<br>
+								public class Tester {<br>
+								public static void main(String[] args) {<br>
+								Integer x = new Integer(3000);<br>
+								Integer y = new Integer(4000);<br>
+								Integer z = new Integer(5000);<br>
+								Object a = x;<br>
+								x = y;<br>
+								y = z;<br>
+								z = null; //line 7<br>
+								}<br>
+								}<br>
+								]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 0 ]]></option>
+                    <option><![CDATA[ 1 ]]></option>
+                    <option><![CDATA[ 2 ]]> </option>
+                    <option><![CDATA[ 3 ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ What can be inserted at // insert code here, <br> to make object created at line 5 eligible for garbage collection? <br>
+									public static void main(String[] args) {<br>
+									Integer[] arr = new Integer[3];<br>
+									arr[0] = new Integer("3"); // Line 5<br>
+									Integer x = arr[0];<br>
+									// insert code here<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ arr[0] = null; ]]></option>
+                    <option><![CDATA[  x = null; ]]></option>
+                    <option><![CDATA[  arr = null; x = new Integer(450);]]> </option>
+                    <option><![CDATA[  All of the above]]></option>
+                    <option><![CDATA[ ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ An object is subject to garbage collection in java : <br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ when the program is at a point of execution that is out the scope of the object]]></option>
+                    <option><![CDATA[  when the object is set to null]]></option>
+                    <option><![CDATA[  when the object becomes unreachable ]]> </option>
+                    <option><![CDATA[  ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+        </PracticeQuestions>
+    </item>
+
+
+    <item>
+        <topicName>Overriding and Overloading</topicName>
+        <Description>Description</Description>
+        <Examples name="Examples">
+            <Example> example 1</Example>
+            <Example> example 2</Example>
+            <Example> example 3</Example>
+        </Examples>
+
+        <PracticeQuestions name ="Practice">
+
+
+            <PraacticeQuestion>
+                <QuestionNo>1</QuestionNo>
+                <Question><![CDATA[What modification is necessary to produce the following output : SubType <br>
+								class Type { <br>
+								public Object getTypeName(){ <br>
+								return "Type"; <br>
+								} <br>
+								} <br>
+								class SubType extends Type { <br>
+								public String getTypeName(){//line 8 <br>
+								return "SubType"; <br>
+								} <br>
+								} <br>
+								public class Tester { <br>
+								public static void main(String[] args) { <br>
+								Type first = new SubType(); //line 16 <br>
+								System.out.println(first.getTypeName()); //line 17 <br>
+								} <br>
+								}<br>
+								Please choose only one answer:<br>
+								]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ No modification is needed ]]></option>
+                    <option><![CDATA[ At line 8 change ´the return type from String to Object to be a correct overloading of getTypeName()  ]]></option>
+                    <option><![CDATA[ At line 16 change Type to SubType]]> </option>
+                    <option><![CDATA[ At line 17 cast first.getTypeName() to String ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>2</QuestionNo>
+                <Question><![CDATA[ 	What is the result of compiling and running the following code? <br>
+										class Base { <br>
+										public final int getNext(int i) { <br>
+										return ++i; <br>
+										} <br>
+										} <br>
+										public class Derived extends Base { <br>
+										public int getNext(int i) { <br>
+										return i++; <br>
+										} <br>
+										public static void main(String[] args) { <br>
+										int result = new Derived().getNext(3); <br>
+										System.out.print(result); <br>
+										result = new Base().getNext(3); <br>
+										System.out.print(result); <br>
+										} <br>
+										}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ 33 ]]></option>
+                    <option><![CDATA[34]]></option>
+                    <option><![CDATA[  44 ]]> </option>
+                    <option><![CDATA[ 43 ]]></option>
+                    <option><![CDATA[ a compilation error ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>3</QuestionNo>
+                <Question><![CDATA[ Which statement(s), inserted independently at <br> // insere code here, will compile? <br>
+									Creature getIt() { return this;} <br>
+									private Falcon getIt() { return new Falcon();}<br>
+									Falcon getIt() {return this;}<br>
+									public Bird getIt() {return this;}<br>
+									Creature getIt(Creature c) {return this;}<br>
+									Author: JavaChamp Team<br>
+									class Creature {<br>
+									Creature getIt() {<br>
+									return this;<br>
+									}<br>
+									}<br>
+									class Bird extends Creature {<br>
+									// insere code here<br>
+									}<br>
+									class Falcon extends Bird {<br>
+									}<br>
+									Please choose all the answers that apply: <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Creature getIt() { <br>return this; <br>} ]]></option>
+                    <option><![CDATA[ private Falcon getIt() {<br> return new Falcon(); <br>} ]]></option>
+                    <option><![CDATA[ Falcon getIt() { <br>return this; <br>} ]]> </option>
+                    <option><![CDATA[ public Bird getIt() { <br>return this; <br>}]]></option>
+                    <option><![CDATA[  Creature getIt(Creature c) { <br> return this; <br> }]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>4</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester {<br>
+									static void call(Long x, Long y) {<br>
+									System.out.print("Long x, Long y");<br>
+									}<br>
+									static void call(int... x) {<br>
+									System.out.print("int... x");<br>
+									}<br>
+									public static void main(String[] args) {<br>
+									int val = 3;<br>
+									call(val, val);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Long x, Long y ]]></option>
+                    <option><![CDATA[ int... x]]></option>
+                    <option><![CDATA[ Compilation error ]]> </option>
+                    <option><![CDATA[ An exception is thrown at run time ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>5</QuestionNo>
+                <Question><![CDATA[ What is the result of compiling and running the following code? <br>
+									public class Tester {<br>
+									static void call(Long x, Long y) {<br>
+									System.out.print("Long x, Long y");<br>
+									}<br>
+									static void call(int... x) {<br>
+									System.out.print("int... x");<br>
+									}<br>
+									static void call(Number x, Number y) {<br>
+									System.out.print("Number x, Number y");<br>
+									}<br>
+									public static void main(String[] args) {<br>
+									int val = 3;<br>
+									call(val, val);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Long x, Long y ]]></option>
+                    <option><![CDATA[ int... x]]></option>
+                    <option><![CDATA[ Compilation error ]]> </option>
+                    <option><![CDATA[ An exception is thrown at run time ]]></option>
+                    <option><![CDATA[  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>6</QuestionNo>
+                <Question><![CDATA[ Which of the following is a valid variable declaration? <br>
+									class Base {<br>
+									public void method(final int x) {<br>
+									System.out.print("Base");<br>
+									}<br>
+									}<br>
+									public class Derived extends Base {<br>
+									public void method(int x) { // line 1<br>
+									System.out.print("Derived");<br>
+									}<br>
+									public static void main(String[] args) {<br>
+									Base b = new Derived();<br>
+									b.method(3);<br>
+									}<br>
+									} <br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[will compile fine and wil print "Derived" ]]></option>
+                    <option><![CDATA[ will compile fine and wil print "Base" ]]></option>
+                    <option><![CDATA[ Won't compile because of line 1.Can be corrected by marking x as final,then the output will be "Derived"]]> </option>
+                    <option><![CDATA[ Won't compile because of line 1.Can be corrected by marking x as final,then the output will be "Base" ]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Multiple</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>7</QuestionNo>
+                <Question><![CDATA[ What is the o/p of the given code?<br>
+									class Ret{<br>
+									public long tryIt(){<br>
+									long num = 25;<br>
+									return num; // $1<br>
+									}<br>
+									}<br>
+									class ReturnType extends Ret{<br>
+									public long tryIt(){<br>
+									char ch = 'a';<br>
+									long num = 50;<br>
+									return ch; // $2<br>
+									}<br>
+									public static void main(String []args){<br>
+									Ret r = new ReturnType(); // $3<br>
+									System.out.println(r.tryIt()); // $4<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option><![CDATA[ 25 ]]></option>
+                    <option><![CDATA[ 50 ]]></option>
+                    <option><![CDATA[ Compilation Error at $2  ]]> </option>
+                    <option><![CDATA[ Compilation Error at $3]]></option>
+                    <option><![CDATA[ Runtime Exception at $4 ]]></option>
+                </options>
+                <TypeofQuestion>Single </TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+            </PraacticeQuestion>
+
+
+            <PraacticeQuestion>
+                <QuestionNo>8</QuestionNo>
+                <Question><![CDATA[  o/p of this program is 35. Which method executes, ;<br> whether it is method Overloading or method Overriding?<br>
+									class BaseI{<br>
+									public int doSum(short a, short b){ // #1<br>
+									return(a+b);<br>
+									}<br>
+									}<br>
+									public class DerivedI extends BaseI{<br>
+									public int doSum(int a,short b){ // #2<br>
+									return(a+b);<br>
+									}<br>
+									public int doSum(short a, short b){ // #3<br>
+									return(a+b);<br>
+									}<br>
+									public static void main(String []args){<br>
+									DerivedI d = new DerivedI();<br>
+									short x =15;<br>
+									short y =20;<br>
+									System.out.println(d.doSum(x,y));<br>
+									}<br>
+									}<br>
+									Please choose only one answer:<br>
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[  #1 ; superclass method. No overloading or overriding ]]></option>
+                    <option><![CDATA[  #2 ; overriding ]]></option>
+                    <option><![CDATA[  #2 ; overloading ]]> </option>
+                    <option><![CDATA[  #3 ; overriding ]]></option>
+                    <option><![CDATA[   #3 ; overloading ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>9</QuestionNo>
+                <Question><![CDATA[What will be the output :<br>
+									class MySuper<br>
+									{<br>
+									MySuper(){disp();}<br>
+									void disp(){System.out.println("superclass");}<br>
+									}<br>
+									class MySub extends MySuper<br>
+									{<br>
+									double i=Math.ceil(8.4f);<br>
+									public static void main(String arg[])<br>
+									{<br>
+									MySuper obj= new MySub();<br>
+									obj.disp();<br>
+									}<br>
+									void disp(){System.out.println(i);}<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ The program displays "superclass" followed by "9.0" as an output. ]]></option>
+                    <option><![CDATA[ The program displays "superclass" followed by "superclass" as an output. ]]></option>
+                    <option><![CDATA[ The program displays "9.0" followed by "9.0" as an output. ]]> </option>
+                    <option><![CDATA[The program displays "0.0" followed by "9.0" as an output.]]></option>
+                    <option><![CDATA[   ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+            <PraacticeQuestion>
+                <QuestionNo>10</QuestionNo>
+                <Question><![CDATA[ Given the code. What is the result?<br>
+									class Hotel {<br>
+									public int bookings;<br>
+									public void book() {<br>
+									bookings++;<br>
+									}<br>
+									}<br>
+									public class SuperHotel extends Hotel {<br>
+									public void book() {<br>
+									bookings--;<br>
+									}<br>
+									public void book(int size) {<br>
+									book();<br>
+									super.book();<br>
+									bookings += size;<br>
+									}<br>
+									public static void main(String args[]) {<br>
+									Hotel hotel = new SuperHotel();<br>
+									hotel.book(2);<br>
+									System.out.print(hotel.bookings);<br>
+									}<br>
+									}<br>
+									Please choose only one answer:
+									]]>
+                </Question>
+                <options>
+                    <option> <![CDATA[ Compilation fails. ]]></option>
+                    <option><![CDATA[ An exception is thrown at runtime]]></option>
+                    <option><![CDATA[ 0 ]]> </option>
+                    <option><![CDATA[ 1 ]]></option>
+                    <option><![CDATA[ -1  ]]></option>
+                </options>
+                <TypeofQuestion>Single</TypeofQuestion>
+                <Answer>A</Answer>
+                <Explanation>SAHIL</Explanation>
+
+            </PraacticeQuestion>
+
+        </PracticeQuestions>
+    </item>
+
+
+
 </Items>
+
+
+
+
+
+

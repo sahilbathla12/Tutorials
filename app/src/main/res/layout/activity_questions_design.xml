@@ -4,8 +4,19 @@
     android:background="@color/activity_backGroundColor"
     android:layout_height="match_parent">
 
+
+    <!-- Load the toolbar here -->
+    <include
+
+        layout="@layout/activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Rest of content for the activity -->
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="5dip"
+        android:color="@color/questionBackgroundColor"
         android:layout_height="wrap_content">
 
         <Button
@@ -15,7 +26,6 @@
             android:background="@color/btn_backgroundColor"
             android:textColor="@color/textColor"
             android:id="@+id/prev"
-
             />
 
         <TextView
@@ -23,13 +33,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Time"
-            android:textColor="@color/textColor"
-
+            android:textColor="@color/questionTextColor"
+            android:textSize="20dip"
             android:layout_centerHorizontal="true"/>
         <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Next"
+            android:textSize="20dip"
             android:id="@+id/next"
             android:layout_gravity="right"
             android:background="@color/btn_backgroundColor"
@@ -44,7 +55,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_marginBottom="20dip"
+
+        android:layout_margin="5dip"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,135 +66,154 @@
 
 
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content">
-
-            <TextView
+            <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="HElo How are You ?"
                 android:layout_weight="1"
+                android:layout_marginBottom="20dip"
+                android:layout_height="wrap_content">
 
-                android:textColor="@color/textColor"
-                android:id="@+id/question"/>
-        </HorizontalScrollView>
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioGroupId">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HElo How are You ?"
+                    android:layout_weight="1"
+                    android:textColor="@color/questionTextColor"
+                    android:id="@+id/question"/>
+            </HorizontalScrollView>
 
 
 
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/optionA"
-
-                android:textColor="@color/textColor"
-                android:text="A"/>
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/optionB"
-
-                android:textColor="@color/textColor"
-
-                android:text="B"/>
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/optionC"
-
-                android:textColor="@color/textColor"
-
-                android:text="C"/>
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/optionD"
-
-                android:textColor="@color/textColor"
-
-                android:text="D"/>
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/optionE"
-
-                android:textColor="@color/textColor"
-                android:text="E"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearLayout_checkBoxes"
-                android:orientation="vertical">
+                >
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dip"
+                    android:layout_margin="1dip"
+                    android:id="@+id/radioGroupId">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="1"
-                    android:id="@+id/checkBoxOptionA"
-                    android:textColor="@color/textColor"
-                    />
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/checkBoxOptionB"
-                    android:text="2"
 
-                    android:textColor="@color/textColor"
-                    />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Chekbox 1"
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dip"
+                        android:textSize="20dip"
+                        android:id="@+id/optionA"
+                        android:textColorHighlight="@color/btn_backgroundColor"
 
-                    android:id="@+id/checkBoxOptionC"
-                    android:textColor="@color/textColor"
-                    />
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Chekbox 1"
+                        android:textColor="@color/questionTextColor"
+                        android:text="A"/>
 
-                    android:id="@+id/checkBoxOptionD"
-                    android:textColor="@color/textColor"
-                    />
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Chekbox 1"
-                    android:id="@+id/checkBoxOptionE"
-                    android:textColor="@color/textColor"
-                     />
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionB"
+                        android:layout_margin="1dip"
+                        android:textSize="20dip"
+                        android:textColor="@color/questionTextColor"
+
+                        android:text="B"/>
+
+                    <RadioButton
+                        android:layout_margin="1dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionC"
+                        android:textSize="20dip"
+                        android:textColor="@color/questionTextColor"
+                        android:text="C"/>
+
+                    <RadioButton
+                        android:layout_margin="1dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionD"
+
+                        android:textColor="@color/questionTextColor"
+                        android:textSize="20dip"
+                        android:text="D"/>
+
+                    <RadioButton
+                        android:layout_margin="1dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionE"
+                        android:textSize="20dip"
+                        android:textColor="@color/questionTextColor"
+                        android:text="E"/>
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout_checkBoxes"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:layout_margin="1dip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="1"
+                            android:textSize="20dip"
+                            android:id="@+id/checkBoxOptionA"
+                            android:textColor="@color/questionTextColor"
+                            />
+                        <CheckBox
+                            android:layout_margin="1dip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/checkBoxOptionB"
+                            android:text="2"
+                            android:textSize="20dip"
+
+                            android:textColor="@color/questionTextColor"
+                            />
+
+                        <CheckBox
+                            android:layout_margin="1dip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="3"
+                            android:textSize="20dip"
+                            android:id="@+id/checkBoxOptionC"
+                            android:textColor="@color/questionTextColor"
+                            />
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="4"
+                            android:textSize="20dip"
+                            android:layout_margin="1dip"
+                            android:id="@+id/checkBoxOptionD"
+                            android:textColor="@color/questionTextColor"
+                            />
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="5"
+                            android:layout_margin="1dip"
+                            android:textSize="20dip"
+                            android:id="@+id/checkBoxOptionE"
+                            android:textColor="@color/questionTextColor"
+                            />
+                    </LinearLayout>
+
+
+                </RadioGroup>
+
+
+
             </LinearLayout>
 
-
-        </RadioGroup>
-
-
-
-    </LinearLayout>
-
             <Button
+                android:layout_margin="1dip"
                 android:id="@+id/showAnswerbtn"
                 android:layout_width="match_parent"
+                android:textSize="20dip"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textColor"
                 android:background="@color/btn_backgroundColor"
@@ -193,13 +224,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="AnswersAnswersAnswers"
-
+                android:textSize="20dip"
+                android:layout_margin="1dip"
                 android:visibility="visible"
                 android:layout_marginBottom="40dip"
-                android:textColor="@color/textColor"
+                android:textColor="@color/questionTextColor"
                 android:id="@+id/answers"/>
 
-</LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 </LinearLayout>

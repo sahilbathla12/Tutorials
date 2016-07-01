@@ -3,8 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="activity_backGroundColor">#4cb19b</color>
+    <color name="activity_backGroundColor">#F5F5F5</color>
     <color name="textColor">#ffffff</color>
-    <color name="btn_backgroundColor">#FF4081</color>
+    <color name="questionTextColor">#425563</color>
+
+    <color name="actionBarBackgroundColor">#425563</color>
+    <color name="questionBackgroundColor">#F5F5F5</color>
+    <color name="btn_backgroundColor">#01A982</color>
+    <color name="listviewButton">#01A982</color>
+    <color name="listviewButtontetColor">#ffffff</color>
 
 </resources>

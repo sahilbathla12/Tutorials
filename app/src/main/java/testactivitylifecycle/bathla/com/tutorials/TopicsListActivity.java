@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -24,7 +27,7 @@ import java.util.List;
 /**
  * Created by bathla on 4/27/2016.
  */
-public class TopicsListActivity extends Activity {
+public class TopicsListActivity extends AppCompatActivity {
 
     List<DatabaseItem> dataBaseItems= null;
     DatabaseHelper  helper;
@@ -33,7 +36,19 @@ public class TopicsListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout);
 
+        // Find the toolbar view and set as ActionBar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+// ...
+// Display icon in the toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         helper = new DatabaseHelper(this);
+
+
        // loadDataBaseXML();
 //        loadXMLTaks loadXMLTaks = new loadXMLTaks();
 //        loadXMLTaks.execute(dataBaseItems);
@@ -41,19 +56,27 @@ public class TopicsListActivity extends Activity {
 
         final ListView list = (ListView) findViewById(R.id.listViews);
 
+
         final RowAdapter adapter = new RowAdapter();
-        list.setAdapter(adapter);
+
+         list.setAdapter(adapter);
+
          list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Toast.makeText(getApplicationContext(),"Item Clicked : "+id,Toast.LENGTH_SHORT).show();
-                DatabaseItem db = dataBaseItems.get((int) id);
-                Intent intent = new Intent(getApplicationContext(), DetailedDescriptionActivity.class);
+
+                /*DatabaseItem db = dataBaseItems.get((int) id);
+                Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
                 // intent.putExtra("databaseItem",db);
 
                 intent.putExtra("databaseItemPosition",list.getSelectedItem().toString());
                 intent.putExtra("databaseItemString",helper.getDesctiption(position));
+                startActivity(intent);*/
+
+                Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
+                intent.putExtra("questionNo",position);
                 startActivity(intent);
             }
         });
@@ -74,7 +97,7 @@ public class TopicsListActivity extends Activity {
     //    List<DatabaseItem> dataBaseItems= null;
 
         TextView Heading;
-        Button examples,practice;
+       /* Button examples,practice;*/
 
 //        RowAdapter(List<DatabaseItem> dataBaseItems)
 //        {
@@ -104,30 +127,34 @@ public class TopicsListActivity extends Activity {
 
             View row = inflater.inflate(R.layout.layout_row, parent, false);
             this.Heading = (TextView) row.findViewById(R.id.list_headings);
-            this.examples = (Button) row.findViewById(R.id.list_examples);
+           /* this.examples = (Button) row.findViewById(R.id.list_examples);
             this.practice = (Button) row.findViewById(R.id.list_Practice);
-
+*/
             Log.d("ListViewActivity","Topic is  : "+helper.getTopicId(position+1));
            // Heading.setText(this.dataBaseItems.get(position).getTopic());
             Heading.setText(helper.getTopicId(position+1));
-            examples.setText("Examples");
+           /* examples.setText("Examples");
             practice.setText("practice");
-
+*/
             this.Heading.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Toast.makeText(getApplicationContext(), "Clicked On " + position, Toast.LENGTH_SHORT).show();
                     //DatabaseItem db = dataBaseItems.get(position);
-                    Intent intent = new Intent(getApplicationContext(), DetailedDescriptionActivity.class);
+                   /* Intent intent = new Intent(getApplicationContext(), DetailedDescriptionActivity.class);
                 //    intent.putExtra("databaseItem",db);
                     intent.putExtra("databaseItemPosition",helper.getTopicId(position+1));
                     intent.putExtra("databaseItemString",helper.getDesctiption(position+1));
+                    startActivity(intent);*/
+                    Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
+                    intent.putExtra("questionNo",position);
+                    //intent.putParcelableArrayListExtra("databasequestion", (ArrayList<? extends Parcelable>) dq);
                     startActivity(intent);
                 }
             });
 
-            this.practice.setOnClickListener(new View.OnClickListener() {
+         /*   this.practice.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -152,11 +179,19 @@ public class TopicsListActivity extends Activity {
                     startActivity(intent);
                 }
             });
-
+*/
             return row;
         }
 
 
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_tutorials, menu);
+
+        return true;
 
     }
 
